@@ -1,0 +1,73 @@
+require 'yaml'
+require 'cucumber/rake/task'
+ENV['capybara'] = 'true'
+ENV['settings'] = File.open("#{File.dirname(__FILE__)}\\settings.yml").read
+
+# Extract environments from Rake file
+environments = []
+YAML::load(ENV['settings']).each do |key,value|
+  environments.push key.to_s
+end
+
+# Set up dynamic tasks
+tasks = {
+  "default" => ["All features", "--tags ~@manual --tags ~@in-progress"],
+  "default-teamcity" => ["All features Teamcity Output", "--format TeamCityFormatter --tags ~@manual --tags ~@in-progress"]
+}
+
+def substitute_environment_name(environment, target)
+  target.sub('default', environment)
+end
+
+# Set up the environment specific tasks
+environments.each do | environment |
+  tasks.each do |target, options|
+    description = options[0]
+    desc "#{description} on #{environment}"
+    task substitute_environment_name(environment, target).to_sym do
+      ENV['tests_environment'] = environment
+      Rake.application[target].execute
+    end
+  end
+end
+
+# Set up the cucumber default tasks
+tasks.each do |target, options|
+  description = options[0]
+  cucumber_options = options[1]
+  Cucumber::Rake::Task.new(target, description) do |t,args|
+    puts args
+    t.cucumber_opts = "#{cucumber_options}"
+  end
+end
+
+# Set up the tasks for specific tags
+environments.each do |environment|
+  tasks.each do |target,options|
+    desc "Run a specific tag on #{environment}"
+      task "#{substitute_environment_name(environment, target)}-tagged".to_sym, :tag do |t, args|
+        ENV['tests_environment'] = environment
+        tag = args[:tag]
+        puts "Run tag: #{tag}"
+        Cucumber::Rake::Task.new("dynamic-tags") do |dynamic_t|
+            dynamic_t.cucumber_opts = "#{options[1]} --tags @#{tag}"
+        end
+        Rake.application["dynamic-tags"].execute
+      end
+  end
+end
+
+#Set up the tasks to run specific features
+environments.each do |environment|
+  desc "Run a specific feature  on #{environment}"
+  task "#{environment}-feature".to_sym, :feature_name do |t, args|
+    ENV['tests_environment'] = environment
+    feature_file = args[:feature_name]
+    puts "Run feature: #{feature_file}"
+    ENV['FEATURE']=feature_file
+    Cucumber::Rake::Task.new("dynamic-feature") do |dynamic_t|
+        dynamic_t.cucumber_opts = "#{options[1]} --tags ~@manual"
+    end
+    Rake.application["dynamic-feature"].execute
+  end
+end

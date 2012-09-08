@@ -70,6 +70,15 @@ function SetAppPoolManagedRuntimeVersion($appPool, $runtimeVersion)
 	$appPool.managedRuntimeVersion = $runtimeVersion
 }
 
+function SetAppPoolRecyclingTime($appPool, $recycleTime)
+{
+	if ($recycleTime -ne "")
+	{
+		$appPool.recycling.periodicRestart.time = $recycleTime
+	}
+}
+
+
 function CreateWebsite($websiteName, $appPoolName, $fullPath, $protocol, $ip, $port, $hostHeader)
 {		
 	New-Item $sitesPath\$websiteName -physicalPath $fullPath -applicationPool $appPoolName -bindings @{protocol="http";bindingInformation="${ip}:${port}:${hostHeader}"}
@@ -86,8 +95,6 @@ function Set-WebsiteForSsl($useSelfSignedCert, $websiteName, $certificateName, $
 	set-sslbinding $certificateName $ipAddress $port
 	set-websitebinding $websiteName $url "https" $ipAddress $port 
 }
-
-
 
 function GetSslCertificate($certName)
 {
@@ -122,18 +129,13 @@ function StopWebItem($itemPath, $itemName)
 	}
 }
 
-function set-webapppool32bitcompatibility($appPoolName)
-{
-	$appPool = Get-Item $appPoolsPath\$appPoolName
-	$appPool.enable32BitAppOnWin64 = "true"
-	$appPool | set-item
-}
 
-function SetAppPoolProperties($appPoolName, $pipelineMode, $runtimeVersion)
+function SetAppPoolProperties($appPoolName, $pipelineMode, $runtimeVersion, $recycleTimeout)
 {
 	$appPool = Get-Item $appPoolsPath\$appPoolName
 	SetAppPoolManagedPipelineMode $appPool $pipelineMode
 	SetAppPoolManagedRuntimeVersion $appPool $runtimeVersion
+	SetAppPoolRecyclingTime $appPool $recycleTimeout
 	$appPool | set-item
 }
  
@@ -204,12 +206,12 @@ if ($LoadAsSnapin)
     }
 }
 
-function set-WebAppPool($appPoolName, $pipelineMode, $runtimeVersion)
+function set-WebAppPool($appPoolName, $pipelineMode, $runtimeVersion, $recycleTimeout)
 {
 	write-host "Recreating apppool $appPoolName with pipeline mode $pipelineMode and .Net version $runtimeVersion"
 	DeleteAppPool $appPoolName
 	CreateAppPool $appPoolName
-	SetAppPoolProperties $appPoolName $pipelineMode $runtimeVersion
+	SetAppPoolProperties $appPoolName $pipelineMode $runtimeVersion $recycleTimeout
 }
 
 function set-WebSite($websiteName, $appPoolName, $fullPath, $hostHeader, $protocol="http", $ip="*", $port="80")
@@ -217,6 +219,13 @@ function set-WebSite($websiteName, $appPoolName, $fullPath, $hostHeader, $protoc
 	write-host "Recreating website $websiteName with path $fullPath, app pool $apppoolname, bound to to host header $hostHeader with IP $ip, port $port over $protocol"
 	DeleteWebsite $websiteName
 	CreateWebsite $websiteName $appPoolName $fullPath $protocol $ip $port $hostHeader
+}
+
+function set-website-with-id($websiteName, $appPoolName, $fullPath, $hostHeader, $protocol="http", $ip="*", $port="80", $siteid)
+{
+	write-host "Recreating website $websiteName with path $fullPath, app pool $apppoolname, bound to to host header $hostHeader with IP $ip, port $port over $protocol"
+	DeleteWebsite $websiteName
+	New-Website $websiteName -Id $siteid -ApplicationPool $appPoolName -PhysicalPath $fullPath -IPAddress $ip -Port $port -HostHeader $hostHeader
 }
 
 function set-SelfSignedSslCertificate($certName)
@@ -326,14 +335,4 @@ function set-property($applicationPath, $propertyName, $value)
 	Set-ItemProperty $sitesPath\$applicationPath -name $propertyName -value $value
 }
 
-function Begin-WebChangeTransaction()
-{
-	return Begin-WebCommitDelay
-}
-
-function End-WebChangeTransaction()
-{
-	return End-WebCommitDelay
-}
-
-export-modulemember -function set-webapppool32bitcompatibility, set-apppoolidentitytouser, set-apppoolidentityType, set-apppoolstartMode, new-webapplication, start-apppoolandsite, start-apppool, start-site, stop-apppoolandsite, set-website,set-webapppool,set-websitebinding,New-WebSiteBinding,New-WebSiteBindingNonHttp,set-SelfSignedSslCertificate, set-sslbinding, Set-WebsiteForSsl, set-property, Begin-WebChangeTransaction, End-WebChangeTransaction
+export-modulemember -function set-apppoolidentitytouser, set-apppoolidentityType, set-apppoolstartMode, new-webapplication, start-apppoolandsite, start-apppool, start-site, stop-apppoolandsite, set-website,set-webapppool,set-websitebinding,New-WebSiteBinding,New-WebSiteBindingNonHttp,set-SelfSignedSslCertificate, set-sslbinding, Set-WebsiteForSsl, set-property, set-website-with-id

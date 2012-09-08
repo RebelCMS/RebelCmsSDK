@@ -1,0 +1,17 @@
+dev:
+    host: http://dev.japan.local
+    port: 80
+
+    port: 80
+
+test:
+    host: http://test.japan.local
+    port: 80
+
+uat:
+    host: http://newuat.japan.local
+    port: 80
+
+live:
+    host: http://newlive.japan.local
+    port: 80

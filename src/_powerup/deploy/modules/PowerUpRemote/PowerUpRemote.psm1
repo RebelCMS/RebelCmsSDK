@@ -50,11 +50,11 @@ function invoke-remotetaskwithpsexec( $tasks, $server, $deploymentEnvironment, $
 
 	if ($server.ContainsKey('username'))
 	{
-		cmd /c cscript.exe $PSScriptRoot\cmd.js $PSScriptRoot\psexec.exe \\$serverName /accepteula -u $server['username'][0] -p $server['password'][0] -w $fullLocalReleaseWorkingFolder $batchFile $deploymentEnvironment $tasks
+		cmd /c cscript.exe $PSScriptRoot\cmd.js $PSScriptRoot\psexec.exe \\$serverName -s /accepteula -u $server['username'][0] -p $server['password'][0] -w $fullLocalReleaseWorkingFolder $batchFile $deploymentEnvironment $tasks
 	}
 	else
 	{
-		cmd /c cscript.exe $PSScriptRoot\cmd.js $PSScriptRoot\psexec.exe \\$serverName /accepteula -w $fullLocalReleaseWorkingFolder $batchFile $deploymentEnvironment $tasks		
+		cmd /c cscript.exe $PSScriptRoot\cmd.js $PSScriptRoot\psexec.exe \\$serverName -s /accepteula -w $fullLocalReleaseWorkingFolder $batchFile $deploymentEnvironment $tasks		
 	}
 		
 	write-host "====== Finished execution of tasks $tasks on server $serverName ====="

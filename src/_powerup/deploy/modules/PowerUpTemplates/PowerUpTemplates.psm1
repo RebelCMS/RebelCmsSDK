@@ -1,27 +1,27 @@
-function Expand-Templates($settingsFile, $deploymentProfile, $templatePath, $outputPath) {
+function Expand-Templates($settingsFile, $deploymentEnvironment, $templatePath, $outputPath) {
 	import-module AffinityId\Id.PowershellExtensions.dll
 	
 	Write-Output "Reading settings"
-	$settings = get-parsedsettings $settingsFile $deploymentProfile 
+	$settings = get-parsedsettings $settingsFile $deploymentEnvironment 
 	
-	Write-Output "Template settings for the $deploymentProfile environment are:"
+	Write-Output "Template settings for the $deploymentEnvironment environment are:"
 	$settings | Format-Table -property *
 	
-	copy-substitutedsettingfiles -templatesDirectory $templatePath -targetDirectory $outputPath -deploymentEnvironment $deploymentProfile -settings $settings
+	copy-substitutedsettingfiles -templatesDirectory $templatePath -targetDirectory $outputPath -deploymentEnvironment $deploymentEnvironment -settings $settings
 }
 
-function Merge-ProfileSpecificFiles($deploymentProfile)
+function Merge-EnvironmentSpecificFiles($deploymentEnvironment)
 {
 	$currentPath = Get-Location
 
-	if ((Test-Path $currentPath\_profilefiles\$deploymentProfile -PathType Container) -eq $true)
+	if ((Test-Path $currentPath\_environments\$deploymentEnvironment -PathType Container) -eq $true)
 	{
-		Copy-Item $currentPath\_profilefiles\$deploymentProfile\* -destination $currentPath\ -recurse -force   
+		Copy-Item $currentPath\_environments\$deploymentEnvironment\* -destination $currentPath\ -recurse -force   
 	}	
 }
 
 
-function Merge-Templates($settings, $deploymentProfile)
+function Merge-Templates($settings, $deploymentEnvironment)
 {
 	import-module AffinityId\Id.PowershellExtensions.dll
 
@@ -32,13 +32,13 @@ function Merge-Templates($settings, $deploymentProfile)
 		return
 	}
 
-	copy-substitutedsettingfiles -templatesDirectory $currentPath\_templates -targetDirectory $currentPath\_templatesoutput -deploymentEnvironment $deploymentProfile -settings $settings
+	copy-substitutedsettingfiles -templatesDirectory $currentPath\_templates -targetDirectory $currentPath\_templatesoutput -deploymentEnvironment $deploymentEnvironment -settings $settings
 	
-	if ((Test-Path $currentPath\_templatesoutput\$deploymentProfile -PathType Container) -eq $true)
+	if ((Test-Path $currentPath\_templatesoutput\$deploymentEnvironment -PathType Container) -eq $true)
 	{
-		Copy-Item $currentPath\_templatesoutput\$deploymentProfile\* -destination $currentPath\ -recurse -force    
+		Copy-Item $currentPath\_templatesoutput\$deploymentEnvironment\* -destination $currentPath\ -recurse -force    
 	}
 }
 
 
-Export-ModuleMember -function Expand-Templates, Merge-Templates, Merge-ProfileSpecificFiles
+Export-ModuleMember -function Expand-Templates, Merge-Templates, Merge-EnvironmentSpecificFiles

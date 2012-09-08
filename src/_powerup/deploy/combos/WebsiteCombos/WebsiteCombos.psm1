@@ -61,6 +61,11 @@ function Invoke-Combo-StandardWebsite($options)
 	{
 		$options.bindings = @(@{})
 	}
+	
+	if (!$options.apppool.timeout)
+	{
+		$options.apppool.timeout = ""
+	}
 
 	foreach($binding in $options.bindings)
 	{
@@ -104,7 +109,7 @@ function Invoke-Combo-StandardWebsite($options)
 		copy-mirroreddirectory $options.fullsourcepath $options.fulldestinationpath
 	}
 
-	set-webapppool $options.apppool.name $options.apppool.executionmode $options.apppool.dotnetversion
+	set-webapppool $options.apppool.name $options.apppool.executionmode $options.apppool.dotnetversion $options.apppool.timeout
 	
 	if ($options.apppool.username)
 	{
@@ -112,7 +117,12 @@ function Invoke-Combo-StandardWebsite($options)
 	}
 	
 	$firstBinding = $options.bindings[0]
-	set-website $options.websitename $options.apppool.name $options.fulldestinationpath $firstBinding.url $firstBinding.protocol $firstBinding.ip $firstBinding.port 
+	
+	if($options.siteid -eq "auto") {
+		set-website $options.websitename $options.apppool.name $options.fulldestinationpath $firstBinding.url $firstBinding.protocol $firstBinding.ip $firstBinding.port 
+	} else {
+		set-website-with-id $options.websitename $options.apppool.name $options.fulldestinationpath $firstBinding.url $firstBinding.protocol $firstBinding.ip $firstBinding.port $options.siteid
+	}
 	
 	foreach($binding in $options.bindings)
 	{
