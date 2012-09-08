@@ -1,0 +1,1 @@
+powershell -inputformat none -command ".\publish.ps1"

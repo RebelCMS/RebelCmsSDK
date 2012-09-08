@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<map>
+  <item key="603833676e2992e6a709e05f09e4b73e" file="" compression="" version="5101">
+    <files>
+      <file name="/Areas/Rebel/Scripts/Rebel.System/Extensions.js" />
+      <file name="/Areas/Rebel/Scripts/KnockoutJs/knockout-2.0.js" />
+    </files>
+  </item>
+  <item key="603833676e2992e6a709e05f09e4b73e" file="C:\Projects\rebelcmshome\src\Web\App_Data\ClientDependency\5101_40b340ba0ffe47fb86697b4b8d5afeb9.cdJ" compression="gzip" version="5101">
+    <files>
+      <file name="/Areas/Rebel/Scripts/Rebel.System/Extensions.js" />
+      <file name="/Areas/Rebel/Scripts/KnockoutJs/knockout-2.0.js" />
+    </files>
+  </item>
+  <item key="08d66c587a97d53858b44adfc50d886b" file="" compression="" version="5101">
+    <files>
+      <file name="/Areas/Rebel/Scripts/Rebel.System/Extensions.js" />
+      <file name="/Areas/Rebel/Scripts/KnockoutJs/knockout-2.0.js" />
+      <file name="/Areas/Install/Scripts/InstallerUtility.js" />
+    </files>
+  </item>
+  <item key="08d66c587a97d53858b44adfc50d886b" file="C:\Projects\rebelcmshome\src\Web\App_Data\ClientDependency\5101_2f463db6db2e46d88cf6666181787b17.cdJ" compression="gzip" version="5101">
+    <files>
+      <file name="/Areas/Rebel/Scripts/Rebel.System/Extensions.js" />
+      <file name="/Areas/Rebel/Scripts/KnockoutJs/knockout-2.0.js" />
+      <file name="/Areas/Install/Scripts/InstallerUtility.js" />
+    </files>
+  </item>
+  <item key="0b638aea9bda929c1e694d3b0458800e" file="" compression="" version="5101">
+    <files>
+      <file name="/Areas/Rebel/Content/Styles/ericmeyer.reset.css" />
+      <file name="/Areas/Rebel/Content/Styles/Site.css" />
+      <file name="/Areas/Rebel/Modules/jQueryUI/v4/jquery-ui-rebel-v4.css" />
+      <file name="/Areas/Rebel/Modules/Panel/style.css" />
+      <file name="/Areas/Rebel/Content/Styles/Validation.css" />
+      <file name="/Areas/Rebel/Content/Styles/Login.css" />
+    </files>
+  </item>
+  <item key="11bb043b1c15c12e704c9da81ce6feb4" file="" compression="" version="5101">
+    <files>
+      <file name="/Areas/Rebel/Scripts/Rebel.System/NamespaceManager.js" />
+      <file name="/Areas/Rebel/Scripts/Base2/base2.js" />
+      <file name="/Areas/Rebel/Scripts/jQuery/jquery.js" />
+      <file name="/Areas/Rebel/Scripts/jQuery/jquery.validate.min.js" />
+      <file name="/Areas/Rebel/Scripts/Rebel.System/QueryStrings.js" />
+      <file name="/Areas/Rebel/Scripts/Rebel.System/Extensions.js" />
+      <file name="/Areas/Rebel/Scripts/jQuery/jquery.unobtrusive-ajax.min.js" />
+      <file name="/Areas/Rebel/Scripts/jQuery/jquery.validate.unobtrusive.min.js" />
+      <file name="/Areas/Rebel/Scripts/Rebel.System/WindowManager.js" />
+      <file name="/Areas/Rebel/Scripts/Rebel.System/RebelApplication.js" />
+      <file name="/Areas/Rebel/Scripts/Rebel.System/ClientApiManager.js" />
+      <file name="/Areas/Rebel/Scripts/jQuery/jquery-ui-1.8.7.custom.min.js" />
+    </files>
+  </item>
+  <item key="11bb043b1c15c12e704c9da81ce6feb4" file="C:\Projects\rebelcmshome\src\Web\App_Data\ClientDependency\5101_c816e6a0334d4fbc91a0a5810378620d.cdJ" compression="gzip" version="5101">
+    <files>
+      <file name="/Areas/Rebel/Scripts/Rebel.System/NamespaceManager.js" />
+      <file name="/Areas/Rebel/Scripts/Base2/base2.js" />
+      <file name="/Areas/Rebel/Scripts/jQuery/jquery.js" />
+      <file name="/Areas/Rebel/Scripts/jQuery/jquery.validate.min.js" />
+      <file name="/Areas/Rebel/Scripts/Rebel.System/QueryStrings.js" />
+      <file name="/Areas/Rebel/Scripts/Rebel.System/Extensions.js" />
+      <file name="/Areas/Rebel/Scripts/jQuery/jquery.unobtrusive-ajax.min.js" />
+      <file name="/Areas/Rebel/Scripts/jQuery/jquery.validate.unobtrusive.min.js" />
+      <file name="/Areas/Rebel/Scripts/Rebel.System/WindowManager.js" />
+      <file name="/Areas/Rebel/Scripts/Rebel.System/RebelApplication.js" />
+      <file name="/Areas/Rebel/Scripts/Rebel.System/ClientApiManager.js" />
+      <file name="/Areas/Rebel/Scripts/jQuery/jquery-ui-1.8.7.custom.min.js" />
+    </files>
+  </item>
+  <item key="0b638aea9bda929c1e694d3b0458800e" file="C:\Projects\rebelcmshome\src\Web\App_Data\ClientDependency\5101_ab3a9919ff354bf8a851e2569c718d9f.cdC" compression="gzip" version="5101">
+    <files>
+      <file name="/Areas/Rebel/Content/Styles/ericmeyer.reset.css" />
+      <file name="/Areas/Rebel/Content/Styles/Site.css" />
+      <file name="/Areas/Rebel/Modules/jQueryUI/v4/jquery-ui-rebel-v4.css" />
+      <file name="/Areas/Rebel/Modules/Panel/style.css" />
+      <file name="/Areas/Rebel/Content/Styles/Validation.css" />
+      <file name="/Areas/Rebel/Content/Styles/Login.css" />
+    </files>
+  </item>
+</map>

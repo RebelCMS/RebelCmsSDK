@@ -1,0 +1,51 @@
+<project default="build-package-common">
+	<include buildfile="_powerup\build\nant\common.build" />
+
+	<property name="solution.name" value="Rebel.Home" />
+  
+	<target name="package-project" depends="run-tests">
+		<copy todir="${package.dir}\Web" overwrite="true" flatten="false" includeemptydirs="true">
+			<fileset basedir="${solution.dir}\Web">		
+				<include name="**\**"/>
+				<exclude name="${solution.dir}\Web\media\**"/>
+				<exclude name="**\obj**"/>
+				<exclude name="**\resources**"/>
+				<exclude name="**\products**"/>
+				<exclude name="**\App_Data\ClientDependency\**"/>
+				<exclude name="**\App_Data\DiskCaches\**"/>
+				<exclude name="**\App_Data\Logs\**"/>
+			</fileset>
+		</copy>
+		
+		<copy todir="${package.dir}\Web\bin" overwrite="true" flatten="true" includeemptydirs="true">
+			<fileset basedir="${solution.dir}\..\lib\Rebel">				
+				<include name="**\**.lic"/>
+			</fileset>
+		</copy>
+		
+		<copy todir="${package.dir}\Migrations" overwrite="true" flatten="true" includeemptydirs="true">
+			<fileset basedir="${solution.dir}\Migrations">				
+				<include name="**\**.config"/>
+				<include name="**\**.dll"/>
+			</fileset>
+		</copy>
+		
+		<copy todir="${package.dir}\Stories" overwrite="true" flatten="false" includeemptydirs="true">
+			<fileset basedir="${solution.dir}\Stories">		
+				<include name="**\**"/>
+			</fileset>
+		</copy>
+	</target>
+	
+	<target name="run-tests">
+     <nunit2>
+        <formatter type="Xml" usefile="true" outputdir="${package.dir}\test-results" extension=".xml" />        
+        <test>
+            <assemblies>
+                <include name="${solution.dir}\Specs\bin\${build.configuration}\Specs.dll" />
+            </assemblies>
+        </test>
+    </nunit2>
+  </target>  
+
+</project>

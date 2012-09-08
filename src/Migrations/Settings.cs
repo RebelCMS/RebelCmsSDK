@@ -18,10 +18,5 @@ namespace Migrations
         {
             get { return ConfigurationManager.AppSettings["Password"]; }
         }
-
-        public static string RavenDbConnectionString 
-        { 
-            get { return ConfigurationManager.AppSettings["RavenDbConnectionString"]; } 
-        }
     }
 }

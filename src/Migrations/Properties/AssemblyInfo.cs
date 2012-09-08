@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Migrations")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("UMG")]
+[assembly: AssemblyCompany("Microsoft")]
 [assembly: AssemblyProduct("Migrations")]
-[assembly: AssemblyCopyright("Copyright © UMG 2012")]
+[assembly: AssemblyCopyright("Copyright © Microsoft 2012")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("83f9c2b5-193f-4b64-a110-dc2d7bf751ae")]
+[assembly: Guid("9b57262a-6f9a-417c-b0d9-176053250fbb")]
 
 // Version information for an assembly consists of the following four values:
 //

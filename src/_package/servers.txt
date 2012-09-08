@@ -1,0 +1,5 @@
+
+localhost
+	server.name									localhost
+	remote.temp.working.folder	\\127.0.0.1\c$\packages
+	local.temp.working.folder		c:\packages

@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{123A1EC4-45C8-4532-8C79-EA9202427771}</ProjectGuid>
+    <ProjectGuid>{69E18467-FCC3-47A9-BC81-1C5B9AF1CA45}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Migrations</RootNamespace>
@@ -32,17 +32,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Nomad.Framework">
-      <HintPath>..\..\lib\Nomad\Nomad.Framework.dll</HintPath>
-    </Reference>
-    <Reference Include="ProductComponents">
-      <HintPath>..\..\lib\Umbraco\ProductComponents.dll</HintPath>
-    </Reference>
-    <Reference Include="Raven.Client.Lightweight">
-      <HintPath>..\..\lib\Umbraco\Raven.Client.Lightweight.dll</HintPath>
+      <HintPath>..\packages\Nomad.1.0.23\lib\Nomad.Framework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.Composition" />
-    <Reference Include="System.configuration" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -54,7 +47,6 @@
     <Compile Include="01_CreateDefaultUser.cs" />
     <Compile Include="02_CreateSchema.cs" />
     <Compile Include="03_CreateData.cs" />
-    <Compile Include="04_CreateRavenIndexes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -70,10 +62,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Nomad.exe.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>

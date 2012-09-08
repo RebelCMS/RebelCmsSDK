@@ -1,0 +1,17 @@
+default	
+	siteid						auto
+	apppool.timeout						
+
+local
+	deployment.root					c:\deployments
+	website.name					rebel.local
+	website.domain					rebel.local
+	website.source.folder			web
+	website.environment			local
+	web.servers						localhost
+	database.server					.
+	database.name					rebel.local
+	database.user					rebeluser
+	database.password			password
+	database.useradmin			nomad
+	database.passwordadmin	p@55word
