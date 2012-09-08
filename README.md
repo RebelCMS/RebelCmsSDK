@@ -43,3 +43,9 @@ Setting up on Teamcity
 *	Add "src\_package => ." to your artifacts paths.
 *	Create a "02 - Deploy to [environment]" build that uses the artifacts from 01 and execute "deploy [environment"  
 *	Create a "03 - Run Stories" build that uses the artifacts of 01 and runs the "run.cmd" file with the appropriate specs for that environment (run rake -T to see all)
+
+Future Plans for this Kit
+=================
+*	Easy plugin and extension creation
+*	Video Tutorials
+*	Documentation
