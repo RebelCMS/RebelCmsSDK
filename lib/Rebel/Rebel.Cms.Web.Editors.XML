@@ -1,0 +1,921 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Rebel.Cms.Web.Editors</name>
+    </assembly>
+    <members>
+        <member name="T:Rebel.Cms.Web.Editors.AbstractContentEditorController">
+            <summary>
+            Abstract controller for use with BasicContentEditorModel types
+            </summary>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.AbstractContentEditorController.Delete(System.Nullable{Rebel.Framework.HiveId})">
+            <summary>
+            JSON action to delete a node
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.AbstractContentEditorController.ReconstructModelPropertyIds(Rebel.Cms.Web.Model.BackOffice.Editors.BasicContentEditorModel)">
+            <summary>
+            This method is used for creating new content and for updating an existing entity with new attributes that may have been
+            created on the document type (attribution schema).
+            </summary>
+            <param name="contentViewModel"></param>
+            <remarks>
+            We need to paste the model back together now with the correct Ids since we generated them on the last Action and we've re-generated them again now.
+            This is done by looking up the Alias Key/Value pair in the posted form element for each of the model's properties. When the key value pair is found
+            we can extract the id that was assigned to it in the HTML markup and re-assign that id to the actual property id so it binds.
+            </remarks>
+        </member>
+        <member name="P:Rebel.Cms.Web.Editors.AbstractContentEditorController.Hive">
+            <summary>
+            The hive provider to use for data access calls
+            </summary>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.AbstractUserEditorController`2.CreateNew(System.Nullable{Rebel.Framework.HiveId})">
+            <summary>
+            Displays the Create user editor 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.AbstractUserEditorController`2.CreateNewForm(Rebel.Cms.Web.Model.BackOffice.Editors.CreateUserModel)">
+            <summary>
+            Creates a new user based on posted values
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.AbstractUserEditorController`2.Edit(System.Nullable{Rebel.Framework.HiveId})">
+            <summary>
+            Action to render the editor
+            </summary>
+            <returns></returns>        
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.AbstractUserEditorController`2.EditForm(System.Nullable{Rebel.Framework.HiveId})">
+            <summary>
+            Handles the editor post back
+            </summary>
+            <param name="id">The id.</param>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.AbstractUserEditorController`2.Delete(System.Nullable{Rebel.Framework.HiveId})">
+            <summary>
+            JSON action to delete a node
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.AbstractUserEditorController`2.ProcessSubmit(Rebel.Cms.Web.Model.BackOffice.Editors.CreateUserModel,`1,`0)">
+            <summary>
+            Processes the submit.
+            </summary>
+            <param name="createModel">The create model.</param>
+            <param name="editModel">The model.</param>
+            <param name="entity">The entity.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.AbstractUserEditorController`2.EnsureViewBagData">
+            <summary>
+            Ensures the view bag data.
+            </summary>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.AbstractUserEditorController`2.CreateNewEditorModel">
+            <summary>
+            Creates a blank user model based on the document type/entityschema for the user
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.AbstractUserEditorController`2.ReconstructModelPropertyIds(Rebel.Cms.Web.Model.BackOffice.Editors.BasicContentEditorModel)">
+            <summary>
+            This method is used for creating new content and for updating an existing entity with new attributes that may have been
+            created on the document type (attribution schema).
+            </summary>
+            <param name="contentViewModel"></param>
+            <remarks>
+            We need to paste the model back together now with the correct Ids since we generated them on the last Action and we've re-generated them again now.
+            This is done by looking up the Alias Key/Value pair in the posted form element for each of the model's properties. When the key value pair is found
+            we can extract the id that was assigned to it in the HTML markup and re-assign that id to the actual property id so it binds.
+            </remarks>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.AbstractUserEditorController`2.CreateNewUserEntity(Rebel.Framework.Persistence.Model.Attribution.MetaData.EntitySchema,System.String,System.String,System.String,System.String,Rebel.Framework.HiveId)">
+            <summary>
+            Creates a new TEditorModel based on the persisted doc type
+            </summary>
+            <param name="docTypeData">The doc type data.</param>
+            <param name="name">The name.</param>
+            <param name="username">The username.</param>
+            <param name="email">The email.</param>
+            <param name="password">The password.</param>
+            <param name="parentId">The parent id.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.AbstractUserEditorController`2.EnsureCreateWizardViewBagData">
+            <summary>
+            Ensures the create wizard view bag data.
+            </summary>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.AbstractUserEditorController`2.CreateNewView(Rebel.Cms.Web.Model.BackOffice.Editors.CreateUserModel)">
+            <summary>
+            Returns the ActionResult for the CreateNew wizard view
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.AbstractSchemaEditorController`2.Edit(System.Nullable{Rebel.Framework.HiveId})">
+            <summary>
+            Action to render the editor
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.AbstractSchemaEditorController`2.EditForm(System.Nullable{Rebel.Framework.HiveId})">
+            <summary>
+            Action to edit the data
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.AbstractSchemaEditorController`2.Delete(Rebel.Framework.HiveId)">
+            <summary>
+            JSON action to delete a node
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.AbstractSchemaEditorController`2.CreateNew(System.Nullable{Rebel.Framework.HiveId})">
+            <summary>
+            Renders the create new document type wizard step
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.AbstractSchemaEditorController`2.CreateNewForm(`1)">
+            <summary>
+            Handles the post back for the create wizard step
+            </summary>
+            <param name="createModel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.AbstractSchemaEditorController`2.ProcessSubmit(`0,Rebel.Framework.Persistence.Model.Attribution.MetaData.EntitySchema,Rebel.Hive.ProviderGrouping.IGroupUnit{Rebel.Hive.RepositoryTypes.IContentStore})">
+            <summary>
+            When editing or creating a document type, this binds the model, checks for errors, determines which 
+            actions to take based on the button pressed, adds appropriate notifications and persists the data.
+            </summary>
+            <param name="model"></param>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.AbstractSchemaEditorController`2.ProcessDeletingProperty(`0)">
+            <summary>
+            Processing deleting a property if the delete property button is pressed
+            </summary>
+            <param name="model"></param>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.AbstractSchemaEditorController`2.ProcessDeletingTab(`0)">
+            <summary>
+            Handles processing of deleting a tab if the delete tab button was clicked
+            </summary>
+            <param name="model"></param>
+            <returns>
+            Returns the attribute group def to delete
+            </returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.AbstractSchemaEditorController`2.ProcessCreatingTab(`0)">
+            <summary>
+            Checks if a tab requires to be added, if so does the processing
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.AbstractSchemaEditorController`2.EnsureSelectListData(`0)">
+            <summary>
+            Ensures the select lists are built for the model
+            </summary>
+            <param name="model"></param>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.AbstractSchemaEditorController`2.EnsureNoInBuiltProperties(`0)">
+            <summary>
+            remove the 'in-built' properties before rendering
+            </summary>
+            <param name="model"></param>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.AbstractSchemaEditorController`2.EnsureCreateWizardViewBagData(Rebel.Framework.HiveId)">
+            <summary>
+            This adds some required elements to the ViewBag so that the Create view renders correctly
+            </summary>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.AbstractUserGroupEditorController.Edit(System.Nullable{Rebel.Framework.HiveId})">
+            <summary>
+            Action to render the editor
+            </summary>
+            <returns></returns>        
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.AbstractUserGroupEditorController.EditForm(Rebel.Framework.HiveId)">
+            <summary>
+            Handles the editor post back
+            </summary>
+            <param name="id">The id.</param>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.AbstractUserGroupEditorController.Create">
+            <summary>
+            Displays the Create user editor 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.AbstractUserGroupEditorController.CreateForm">
+            <summary>
+            Creates a new user based on posted values
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.AbstractUserGroupEditorController.PopulatePermissions(Rebel.Cms.Web.Model.BackOffice.Editors.UserGroupEditorModel)">
+            <summary>
+            Populates the permissions for the given model.
+            </summary>
+            <param name="model">The model.</param>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.AbstractUserGroupEditorController.CreateNewUserGroup">
+            <summary>
+            Creates a blank user model based on the document type/entityschema for the user
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Rebel.Cms.Web.Editors.AbstractRevisionalContentEditorController`1">
+            <summary>
+            An Abstract controller containing primary logic for content controllers
+            </summary>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.AbstractRevisionalContentEditorController`1.Delete(System.Nullable{Rebel.Framework.HiveId})">
+            <summary>
+            JSON action to send a node to the recycle bin or completely delete it if it is in the recycle bin
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.AbstractRevisionalContentEditorController`1.EditForm(System.Nullable{Rebel.Framework.HiveId},System.Nullable{Rebel.Framework.HiveId})">
+            <summary>
+            Handles the editor post back
+            </summary>
+            <param name="id">The id.</param>
+            <param name="revisionId"></param>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.AbstractRevisionalContentEditorController`1.OnEditing(`0,Rebel.Framework.Persistence.Model.Versioning.EntitySnapshot{Rebel.Framework.Persistence.Model.TypedEntity})">
+            <summary>
+            Allows inheritors to modify the model before being passed to the view
+            </summary>
+            <param name="model">The model being returned to the view</param>
+            <param name="entity">The entity that the model was created from</param>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.AbstractRevisionalContentEditorController`1.CreateNew(System.Nullable{Rebel.Framework.HiveId})">
+            <summary>
+            Shows the create editor wizard
+            </summary>
+            <param name="id">The parent id to create content under</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.AbstractRevisionalContentEditorController`1.CreateNewForm(Rebel.Cms.Web.Model.BackOffice.Editors.CreateContentModel)">
+            <summary>
+            Handles the create wizard step post
+            </summary>
+            <param name="createModel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.AbstractRevisionalContentEditorController`1.EmptyBin">
+            <summary>
+            Json action to empty the recycle bin
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.AbstractRevisionalContentEditorController`1.ProcessSubmit(`0,Rebel.Framework.Persistence.Model.Versioning.Revision{Rebel.Framework.Persistence.Model.TypedEntity},System.Boolean)">
+            <summary>
+            When editing or creating content, this will bind the model, check the model state errors, add appropriate notifications
+            return the error view or redirect to the correct place and also persist the data to the repository.
+            </summary>
+            <param name="model"></param>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.AbstractRevisionalContentEditorController`1.NotifyForProcess(Rebel.Cms.Web.Editors.AbstractRevisionalContentEditorController{`0}.NotificationState,`0)">
+            <summary>
+            Outputs the correct messages in Notifications, validation and notice board based on the NotificationState
+            </summary>
+            <param name="state"></param>
+            <param name="model"></param>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.AbstractRevisionalContentEditorController`1.EnsureUniqueName(`0)">
+            <summary>
+            Ensures the name is unique.
+            </summary>
+            <param name="model">The model.</param>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.AbstractRevisionalContentEditorController`1.EnsureCreateWizardViewBagData(System.Collections.Generic.IEnumerable{Rebel.Framework.Persistence.Model.Attribution.MetaData.EntitySchema})">
+            <summary>
+            This adds some required elements to the ViewBag so that the Create view renders correctly
+            </summary>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.AbstractRevisionalContentEditorController`1.CreateNewContentEntity(Rebel.Framework.Persistence.Model.Attribution.MetaData.EntitySchema,System.String,Rebel.Framework.HiveId)">
+            <summary>
+            Creates a new TEditorModel based on the persisted doc type
+            </summary>
+            <param name="docTypeData"></param>
+            <param name="name"></param>
+            <param name="parentId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.AbstractRevisionalContentEditorController`1.CreateNewView(Rebel.Cms.Web.Model.BackOffice.Editors.CreateContentModel)">
+            <summary>
+            Returns the ActionResult for the CreateNew wizard view
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Rebel.Cms.Web.Editors.AbstractRevisionalContentEditorController`1.RecycleBinId">
+            <summary>
+            Returns the recycle bin id used for this controller
+            </summary>
+        </member>
+        <member name="P:Rebel.Cms.Web.Editors.AbstractRevisionalContentEditorController`1.VirtualRootNodeId">
+            <summary>
+            Return the media root as the virtual root node
+            </summary>
+        </member>
+        <member name="P:Rebel.Cms.Web.Editors.AbstractRevisionalContentEditorController`1.RootSchemaNodeId">
+            <summary>
+            Returns the media virtual root
+            </summary>
+        </member>
+        <member name="P:Rebel.Cms.Web.Editors.AbstractRevisionalContentEditorController`1.CreateNewTitle">
+            <summary>
+            The title to display in the create new dialog
+            </summary>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.ContentEditorController.OnEditing(Rebel.Cms.Web.Model.BackOffice.Editors.ContentEditorModel,Rebel.Framework.Persistence.Model.Versioning.EntitySnapshot{Rebel.Framework.Persistence.Model.TypedEntity})">
+            <summary>
+            Updates the URLs for the entity and updates the noticeboard if there are not templates
+            </summary>
+            <param name="model"></param>
+            <param name="entity"></param>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.ContentEditorController.ProcessSubmit(Rebel.Cms.Web.Model.BackOffice.Editors.ContentEditorModel,Rebel.Framework.Persistence.Model.Versioning.Revision{Rebel.Framework.Persistence.Model.TypedEntity},System.Boolean)">
+            <summary>
+            Override to ensure the URLs are populated in case validation fails
+            </summary>
+            <param name="model"></param>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.ContentEditorController.PopulateUrls(Rebel.Cms.Web.Model.BackOffice.Editors.ContentEditorModel,Rebel.Framework.Persistence.Model.TypedEntity)">
+            <summary>
+            Adds the document links to the model
+            </summary>
+            <param name="contentViewModel"></param>
+            <param name="source"></param>
+        </member>
+        <member name="P:Rebel.Cms.Web.Editors.ContentEditorController.Hive">
+            <summary>
+            Returns the hive provider used for this controller
+            </summary>
+        </member>
+        <member name="P:Rebel.Cms.Web.Editors.ContentEditorController.RecycleBinId">
+            <summary>
+            Returns the recycle bin id used for this controller
+            </summary>
+        </member>
+        <member name="P:Rebel.Cms.Web.Editors.ContentEditorController.VirtualRootNodeId">
+            <summary>
+            Returns the virtual root node for the content type that this controller is rendering content for
+            </summary>
+        </member>
+        <member name="P:Rebel.Cms.Web.Editors.ContentEditorController.RootSchemaNodeId">
+            <summary>
+            Returns the schema root node for the current type of content
+            </summary>
+        </member>
+        <member name="P:Rebel.Cms.Web.Editors.ContentEditorController.CreateNewTitle">
+            <summary>
+            Returns the message to display when presenting the CreateNew view
+            </summary>
+        </member>
+        <member name="T:Rebel.Cms.Web.Editors.Extenders.ContentControllerExtenderBase">
+            <summary>
+            Base class for Content Controller Extenders
+            </summary>    
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.Extenders.ContentControllerExtenderBase.Initialize(System.Web.Routing.RequestContext)">
+            <summary>
+            This checks for the parent controller type and validates it, then sets the appropriate properties
+            </summary>
+            <param name="requestContext"></param>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.Extenders.PublicAccessController.PublicAccess(Rebel.Framework.HiveId)">
+            <summary>
+            Permissionses the specified id.
+            </summary>
+            <param name="id">The id.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.Extenders.PublicAccessController.PublicAccessForm(Rebel.Cms.Web.Model.BackOffice.Editors.PublicAccessModel)">
+            <summary>
+            Permissionses the form.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Rebel.Cms.Web.Editors.Extenders.LanguageController">
+            <summary>
+            Used for the language dialog
+            </summary>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.AbstractFileEditorController.Edit(System.Nullable{Rebel.Framework.HiveId})">
+            <summary>
+            Displays the editor
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.AbstractFileEditorController.Save(Rebel.Cms.Web.Model.BackOffice.Editors.FileEditorModel)">
+            <summary>
+            Handles the AJAX post to save the file
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.AbstractFileEditorController.Delete(Rebel.Framework.HiveId)">
+            <summary>
+            JSON action to delete a node
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.AbstractFileEditorController.OnBeforeSave(Rebel.Framework.Persistence.Model.IO.File)">
+            <summary>
+            Used by inheritors to make any changes to the file before it is persisted
+            </summary>
+            <param name="file"></param>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.AbstractFileEditorController.OnBeforeUpdate(Rebel.Cms.Web.Model.BackOffice.Editors.FileEditorModel)">
+            <summary>
+            Used by inheritors to make any changes to the model before creation
+            </summary>
+            <param name="model"></param>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.AbstractFileEditorController.OnBeforeCreate(Rebel.Cms.Web.Model.BackOffice.Editors.CreateFileModel,Rebel.Cms.Web.Model.BackOffice.Editors.FileEditorModel)">
+            <summary>
+            Used by inheritors to make any changes to the model before creation
+            </summary>
+            <param name="model"></param>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.AbstractFileEditorController.OnAfterCreate(Rebel.Framework.Persistence.Model.IO.File)">
+            <summary>
+            Used by inheritors to make any changes to the model before creation
+            </summary>
+            <param name="model"></param>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.AbstractFileEditorController.CreatePaths(Rebel.Framework.Persistence.Model.IO.File)">
+            <summary>
+            Used by inheritors to make any changes to the model before redirecting
+            </summary>
+            <param name="file"></param>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.AbstractFileEditorController.PerformSave(Rebel.Cms.Web.Model.BackOffice.Editors.FileEditorModel)">
+            <summary>
+            Does the save.
+            </summary>
+            <param name="model">The model.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.AbstractFileEditorController.EnsureViewData(Rebel.Cms.Web.Model.BackOffice.Editors.CreateFileModel)">
+            <summary>
+            This adds some required elements to the ViewBag so that the Create view renders correctly
+            </summary>
+            <param name="model"></param>
+        </member>
+        <member name="P:Rebel.Cms.Web.Editors.AbstractFileEditorController.AllowedFileExtensions">
+            <summary>
+            The allowed file extensions supported for the editor
+            </summary>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.Dialogs.InsertMacroEditorController.GetMacroByAlias(System.String)">
+            <summary>
+            Gets a macro by alias.
+            </summary>
+            <param name="alias">The alias.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.Dialogs.InsertMacroEditorController.BindModel(System.Object,System.String)">
+            <summary>
+            Binds the model.
+            </summary>
+            <param name="model">The model.</param>
+            <param name="fieldPrefix">The field prefix.</param>
+            <returns></returns>
+        </member>
+        <member name="P:Rebel.Cms.Web.Editors.MemberGroupEditorController.ProviderGroupRoot">
+            <summary>
+            Gets the provider group root.
+            </summary>
+        </member>
+        <member name="P:Rebel.Cms.Web.Editors.MemberGroupEditorController.VirtualRoot">
+            <summary>
+            Gets the provider group root.
+            </summary>
+        </member>
+        <member name="P:Rebel.Cms.Web.Editors.MemberGroupEditorController.UserType">
+            <summary>
+            Gets the type of the user.
+            </summary>
+            <value>
+            The type of the user.
+            </value>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.Extenders.RollbackController.Rollback(Rebel.Framework.HiveId)">
+            <summary>
+            Rollback the specified id.
+            </summary>
+            <param name="id">The id.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.Extenders.RollbackController.RollbackForm(Rebel.Framework.HiveId,Rebel.Framework.HiveId)">
+            <summary>
+            Rollback the form.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.Extenders.RollbackController.Diff(Rebel.Framework.HiveId,Rebel.Framework.HiveId)">
+            <summary>
+            Returns a diff of typed entities current revision, and the revision supplied.
+            </summary>
+            <param name="id">The id.</param>
+            <param name="revisionId">The revision id.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Rebel.Cms.Web.Editors.Extenders.HostnameController">
+            <summary>
+            Used for the hostname dialog
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:Rebel.Cms.Web.Editors.Extenders.MoveCopyController" -->
+        <member name="M:Rebel.Cms.Web.Editors.Extenders.MoveCopyController.#ctor(Rebel.Cms.Web.Context.IBackOfficeRequestContext)">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.Extenders.MoveCopyController.Initialize(System.Web.Routing.RequestContext)">
+            <summary>
+            This checks for the parent controller type and validates it, then sets the appropriate properties
+            </summary>
+            <param name="requestContext"></param>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.Extenders.MoveCopyController.Copy(System.Nullable{Rebel.Framework.HiveId})">
+            <summary>
+            Displays the copy dialog
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.Extenders.MoveCopyController.CopyForm(Rebel.Cms.Web.Model.BackOffice.Editors.CopyModel)">
+            <summary>
+            Handles the ajax request for the copy dialog
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.Extenders.MoveCopyController.Move(System.Nullable{Rebel.Framework.HiveId})">
+            <summary>
+            Displays the move dialog
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.Extenders.MoveCopyController.MoveForm(Rebel.Cms.Web.Model.BackOffice.Editors.MoveModel)">
+            <summary>
+            Handles the ajax request for the move dialog
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.Extenders.MoveCopyController.MoveCopyView(Rebel.Framework.HiveId,Rebel.Cms.Web.Model.BackOffice.Editors.MoveModel)">
+            <summary>
+            Returns the ViewResult for use in the Move/Copy dialogs
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.Extenders.MoveCopyController.ProcessMoveCopy(Rebel.Framework.HiveId,Rebel.Framework.HiveId,System.Func{Rebel.Framework.Persistence.Model.TypedEntity,Rebel.Framework.Persistence.Model.TypedEntity,Rebel.Hive.ProviderGrouping.IGroupUnit{Rebel.Hive.RepositoryTypes.IContentStore},System.Tuple{System.String,Rebel.Framework.EntityPathCollection,System.String}})">
+            <summary>
+            Helper method to retreive the from/to entities and validate if the move/copy is allowed
+            </summary>
+            <param name="selectedItemId"></param>
+            <param name="toId"></param>
+            <param name="performSave"></param>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.Extenders.PermissionsController.Permissions(Rebel.Framework.HiveId)">
+            <summary>
+            Permissionses the specified id.
+            </summary>
+            <param name="id">The id.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.Extenders.PermissionsController.PermissionsForm(Rebel.Cms.Web.Model.BackOffice.Editors.PermissionsModel)">
+            <summary>
+            Permissionses the form.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Rebel.Cms.Web.Editors.Extenders.PublishController">
+            <summary>
+            Used for the publish dialog
+            </summary> 
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.Extenders.PublishController.Publish(System.Nullable{Rebel.Framework.HiveId})">
+            <summary>
+            Displays the publish dialog
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.Extenders.PublishController.PublishForm(Rebel.Cms.Web.Model.BackOffice.Editors.PublishModel)">
+            <summary>
+            Handles the ajax request for the publish dialog
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Rebel.Cms.Web.Editors.Extenders.SortController">
+            <summary>
+            Used for sorting content
+            </summary>    
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.Extenders.SortController.Sort(System.Nullable{Rebel.Framework.HiveId})">
+            <summary>
+            Displays the sort dialog
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.Extenders.SortController.SortForm(Rebel.Cms.Web.Model.BackOffice.Editors.SortModel)">
+            <summary>
+            Handles the ajax request for the publish dialog
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.LanguageEditorController.Create">
+            <summary>
+            Displays the Create language editor 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.LanguageEditorController.CreateForm">
+            <summary>
+            Creates a new language based on posted values
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.LanguageEditorController.Edit(System.Nullable{Rebel.Framework.HiveId})">
+            <summary>
+            Displays the edit language form.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.LanguageEditorController.EditForm(System.Nullable{Rebel.Framework.HiveId})">
+            <summary>
+            Updates a language based on posted values.
+            </summary>
+            <param name="id">The id.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.LanguageEditorController.Delete(System.Nullable{Rebel.Framework.HiveId})">
+            <summary>
+            JSON action to delete a language
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.MacroEditorController.Delete(Rebel.Framework.HiveId)">
+            <summary>
+            JSON action to delete a node
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.MacroEditorController.JsonParametersException(System.Exception)">
+            <summary>
+            Returns the Json notifications when an exception occurs
+            </summary>
+            <param name="ex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.MacroEditorController.EnsureModelListData(Rebel.Cms.Web.Model.BackOffice.Editors.MacroEditorModel)">
+            <summary>
+            Ensure the ViewBag has all of its required list data
+            </summary>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.MacroEditorController.GetMacroParameterEditors">
+            <summary>
+            Returns all of the registered macro parameter editors
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Rebel.Cms.Web.Editors.MediaEditorController.Hive">
+            <summary>
+            Returns the hive provider used for this controller
+            </summary>
+        </member>
+        <member name="P:Rebel.Cms.Web.Editors.MediaEditorController.RecycleBinId">
+            <summary>
+            Returns the recycle bin id used for this controller
+            </summary>
+        </member>
+        <member name="P:Rebel.Cms.Web.Editors.MediaEditorController.VirtualRootNodeId">
+            <summary>
+            Return the media root as the virtual root node
+            </summary>
+        </member>
+        <member name="P:Rebel.Cms.Web.Editors.MediaEditorController.RootSchemaNodeId">
+            <summary>
+            Returns the media virtual root
+            </summary>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.DocumentTypeEditorController.EnsureSelectListData(Rebel.Cms.Web.Model.BackOffice.Editors.DocumentTypeEditorModel)">
+            <summary>
+            Ensures the select lists are built for the model
+            </summary>
+            <param name="model"></param>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.DataTypeEditorController.Edit(System.Nullable{Rebel.Framework.HiveId})">
+            <summary>
+            Action to render the editor
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.DataTypeEditorController.EditForm(System.Nullable{Rebel.Framework.HiveId})">
+            <summary>
+            Action to handle the posted contents of the editor
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.DataTypeEditorController.CreateNew">
+            <summary>
+            Renders the create new document type wizard step
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.DataTypeEditorController.CreateNewForm(Rebel.Cms.Web.Model.BackOffice.Editors.CreateDataTypeModel)">
+            <summary>
+            Handles the post back for the create wizard step
+            </summary>
+            <param name="createModel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.DataTypeEditorController.Delete(Rebel.Framework.HiveId)">
+            <summary>
+            JSON action to delete a node
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.DataTypeEditorController.ProcessSubmit(Rebel.Cms.Web.Model.BackOffice.Editors.DataTypeEditorModel,Rebel.Framework.Persistence.Model.Attribution.MetaData.AttributeType)">
+            <summary>
+            Processes the submit for insert/update
+            </summary>
+            <param name="model"></param>
+            <param name="entity"></param>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.DataTypeEditorController.EnsurePropEditorListViewBagData">
+            <summary>
+            This adds some required elements to the ViewBag so that the Create view renders correctly
+            </summary>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.PackagingEditorController.Create(Rebel.Framework.HiveId)">
+            <summary>
+            Creates the specified id.
+            </summary>
+            <param name="id">The id.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.PackagingEditorController.CreateForm(Rebel.Cms.Web.Model.BackOffice.Editors.PackageDefinitionEditorModel)">
+            <summary>
+            Creates the form.
+            </summary>
+            <param name="model">The model.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.PackagingEditorController.Edit(System.Nullable{Rebel.Framework.HiveId})">
+            <summary>
+            Action to render the editor
+            </summary>
+            <returns></returns>     
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.PackagingEditorController.EditForm(Rebel.Cms.Web.Model.BackOffice.Editors.PackageDefinitionEditorModel)">
+            <summary>
+            Handles the editor post back
+            </summary>
+            <param name="id">The id.</param>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.PackagingEditorController.Download(System.Nullable{Rebel.Framework.HiveId})">
+            <summary>
+            Action to render the editor
+            </summary>
+            <returns></returns>     
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.PackagingEditorController.Delete(System.Nullable{Rebel.Framework.HiveId})">
+            <summary>
+            JSON action to delete a node
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.PackagingEditorController.Browse(System.String)">
+            <summary>
+            Browses the specified path.
+            </summary>
+            <param name="path">The path.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.PackagingEditorController.PublicRepository">
+            <summary>
+            Displays the public repository
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.PackagingEditorController.LocalRepository">
+            <summary>
+            Displays the local repository
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.PackagingEditorController.RecycleApplication(System.String,Rebel.Cms.Web.Model.BackOffice.PackageInstallationState)">
+            <summary>
+            An action to recycle app domain
+            </summary>
+            <param name="id">The Hive id of the package</param>
+            <param name="state">If it is installing or uninstalling</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.PackagingEditorController.PerformRecycleApplication(System.Boolean)">
+            <summary>
+            Actually does the shutting down of the app which is called by ajax, if onlyCheck is true, this will just
+            return the status
+            </summary>
+            <param name="onlyCheck"></param> 
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.PackagingEditorController.ManagePackage">
+            <summary>
+            Handles the post back for installing/removing/deleting local packages
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.PackagingEditorController.AddLocalPackage(System.Web.HttpPostedFileBase)">
+            <summary>
+            Handles uploading a new local package
+            </summary>
+            <param name="file"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.PackagingEditorController.RunPackageActions(System.String,Rebel.Cms.Web.Model.BackOffice.PackageInstallationState)">
+            <summary>
+            Runs the actions for a package, this is generally run after the app pool is recycled
+            </summary>
+            <param name="id">The nuget package id</param>
+            <param name="state">If its installing or uninstalling</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.PackagingEditorController.Installed(System.String)">
+            <summary>
+            Displayed after a package is successfully installed
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.Editors.PackagingEditorController.Uninstalled">
+            <summary>
+            Displayed after a package is successfully installed
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Rebel.Cms.Web.Editors.UserGroupEditorController.ProviderGroupRoot">
+            <summary>
+            Gets the provider group root.
+            </summary>
+        </member>
+        <member name="P:Rebel.Cms.Web.Editors.UserGroupEditorController.VirtualRoot">
+            <summary>
+            Gets the provider group root.
+            </summary>
+        </member>
+        <member name="P:Rebel.Cms.Web.Editors.UserGroupEditorController.UserType">
+            <summary>
+            Gets the type of the user.
+            </summary>
+            <value>
+            The type of the user.
+            </value>
+        </member>
+    </members>
+</doc>

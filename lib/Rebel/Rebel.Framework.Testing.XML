@@ -1,0 +1,136 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Rebel.Framework.Testing</name>
+    </assembly>
+    <members>
+        <member name="T:Rebel.Framework.Testing.Common">
+            <summary>
+            Common helper properties and methods useful to testing
+            </summary>
+        </member>
+        <member name="M:Rebel.Framework.Testing.Common.MapPathForTest(System.String)">
+            <summary>
+            Maps the given <paramref name="relativePath"/> making it rooted on <see cref="P:Rebel.Framework.Testing.Common.CurrentAssemblyDirectory"/>. <paramref name="relativePath"/> must start with <code>~/</code>
+            </summary>
+            <param name="relativePath">The relative path.</param>
+            <returns></returns>
+        </member>
+        <member name="P:Rebel.Framework.Testing.Common.CurrentAssemblyDirectory">
+            <summary>
+            Gets the current assembly directory.
+            </summary>
+            <value>The assembly directory.</value>
+        </member>
+        <member name="M:Rebel.Framework.Testing.PartialTrust.IPartialTrustFixture.TestSetup">
+            <summary>
+            Run once before each test in derived test fixtures.
+            </summary>
+        </member>
+        <member name="M:Rebel.Framework.Testing.PartialTrust.IPartialTrustFixture.TestTearDown">
+            <summary>
+            Run once after each test in derived test fixtures.
+            </summary>
+        </member>
+        <member name="M:Rebel.Framework.Testing.PartialTrust.AbstractPartialTrustFixture`1.FixtureSetup">
+            <summary>
+            Run once by NUnit for this fixture. This will setup a new partial-trust <see cref="T:System.AppDomain"/>
+            for the duration of this test fixture, and a <see cref="T:Rebel.Framework.Testing.PartialTrust.PartialTrustHelper`1"/> which will also
+            survive for the life of the test fixture.
+            </summary>
+        </member>
+        <member name="M:Rebel.Framework.Testing.PartialTrust.AbstractPartialTrustFixture`1.FixtureTearDown">
+            <summary>
+            Causes the partial-trust <see cref="T:System.AppDomain"/> to be unloaded.
+            </summary>
+        </member>
+        <member name="M:Rebel.Framework.Testing.PartialTrust.AbstractPartialTrustFixture`1.PartialTrustSetup">
+            <summary>
+            This is run before each test by the NUnit runner. It will first cause <see cref="M:Rebel.Framework.Testing.PartialTrust.AbstractPartialTrustFixture`1.TestSetup"/> to be
+            run on the derived test class in the partial-trust domain. It will then run the current test method
+            (obtained from NUnit's TestContext) in the same partial-trust domain. In order to prevent the same test
+            then being run a second time in our original full-trust <see cref="T:System.AppDomain"/>, it then throws
+            an NUnit <see cref="T:NUnit.Framework.SuccessException"/> which counts as a Pass and prevents continued execution of the test.
+            </summary>
+            <remarks>
+            If the test failed in partial trust, it will be marked as failed as normal - including any errors specific
+            to running it in a partial trust environment.
+            </remarks>
+        </member>
+        <member name="M:Rebel.Framework.Testing.PartialTrust.AbstractPartialTrustFixture`1.TestSetup">
+            <summary>
+            Run once before each test in derived test fixtures.
+            </summary>
+        </member>
+        <member name="M:Rebel.Framework.Testing.PartialTrust.AbstractPartialTrustFixture`1.PartialTrustTearDown">
+            <summary>
+            This is run once after each test by the NUnit runner. It will cause <see cref="M:Rebel.Framework.Testing.PartialTrust.AbstractPartialTrustFixture`1.TestTearDown"/> to be 
+            run on the derived test class in the partial-trust domain.
+            </summary>
+        </member>
+        <member name="M:Rebel.Framework.Testing.PartialTrust.AbstractPartialTrustFixture`1.TestTearDown">
+            <summary>
+            Run once after each test in derived test fixtures.
+            </summary>
+        </member>
+        <member name="M:Rebel.Framework.Testing.PartialTrust.PartialTrustHelper`1.RunInPartial(System.Reflection.MethodInfo,System.AppDomain,Rebel.Framework.Testing.PartialTrust.PartialTrustHelper{`0}.PartialTrustMethodRunner{`0})">
+            <summary>
+            Runs the provided <paramref name="methodInfo"/> in the <paramref name="partiallyTrustedDomain"/>.
+            If <paramref name="marshaller"/> is provided, it will be used, otherwise a new one will be created.
+            </summary>
+            <param name="methodInfo">The method info.</param>
+            <param name="partiallyTrustedDomain">The partially trusted domain.</param>
+            <param name="marshaller">The marshaller.</param>
+        </member>
+        <member name="M:Rebel.Framework.Testing.PartialTrust.PartialTrustHelper`1.GenerateMarshaller(System.AppDomain)">
+            <summary>
+            Generates a marshaller proxy of <see cref="T:Rebel.Framework.Testing.PartialTrust.PartialTrustHelper`1.PartialTrustMethodRunner`1"/> inside the provided <paramref name="partiallyTrustedDomain"/>.
+            </summary>
+            <param name="partiallyTrustedDomain">The partially trusted domain.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Framework.Testing.PartialTrust.PartialTrustHelper`1.CreatePartialTrustDomain">
+            <summary>
+            Creates the an <see cref="T:System.AppDomain"/> with a partial trust <see cref="T:System.Security.PermissionSet"/>.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Framework.Testing.PartialTrust.PartialTrustHelper`1.MediumTrustConfigHelper.GetMediumTrustPermissionSet">
+            <summary>
+            Gets the medium trust permission set from the default config path.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Framework.Testing.PartialTrust.PartialTrustHelper`1.MediumTrustConfigHelper.GetMediumTrustPermissionSet(System.String)">
+            <summary>
+            Gets the medium trust permission set.
+            </summary>
+            <param name="pathToConfigFile">The path to the config file.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Framework.Testing.PartialTrust.PartialTrustHelper`1.MediumTrustConfigHelper.ProcessIPermissionAttributeValue(System.Xml.Linq.XElement)">
+            <summary>
+            Processes the custom attribute values of IPermission config elements to replicate what ASP.Net performs
+            when scanning the permission set. Primarily just replaces $AppDir$ on a FileIOPermission with the current
+            directory.
+            </summary>
+            <param name="element">The element.</param>
+        </member>
+        <member name="M:Rebel.Framework.Testing.PartialTrust.PartialTrustHelper`1.MediumTrustConfigHelper.GetMediumTrustConfigPath">
+            <summary>
+            Gets the medium trust config path for the current runtime environment.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Rebel.Framework.Testing.PartialTrust.TestOnlyInFullTrustAttribute">
+            <summary>
+            Specifies that the <see cref="T:Rebel.Framework.Testing.PartialTrust.AbstractPartialTrustFixture`1"/> will not run the decorated test in a partial trust AppDomain
+            </summary>
+        </member>
+        <member name="M:Rebel.Framework.Testing.PartialTrust.TestOnlyInFullTrustAttribute.#ctor">
+            <summary>
+            Specifies that the <see cref="T:Rebel.Framework.Testing.PartialTrust.AbstractPartialTrustFixture`1"/> will not run the decorated test in a partial trust AppDomain
+            </summary>
+        </member>
+    </members>
+</doc>

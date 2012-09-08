@@ -1,0 +1,1630 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Rebel.Cms.Web.PropertyEditors</name>
+    </assembly>
+    <members>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.CollectionEditingHtmlExtensions.BeginCollectionItem``1(System.Web.Mvc.HtmlHelper{``0},System.String)">
+            <summary>
+            Begins a collection item by inserting either a previously used .Index hidden field value for it or a new one.
+            </summary>
+            <typeparam name="TModel"></typeparam>
+            <param name="html"></param>
+            <param name="collectionName">The name of the collection property from the Model that owns this item.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.CollectionEditingHtmlExtensions.GetCollectionItemIndex(System.String)">
+            <summary>
+            Tries to reuse old .Index values from the HttpRequest in order to keep the ModelState consistent
+            across requests. If none are left returns a new one.
+            </summary>
+            <param name="collectionIndexFieldName"></param>
+            <returns>a GUID string</returns>
+        </member>
+        <member name="T:Rebel.Cms.Web.PropertyEditors.ColorSwatchPicker.ColorItem">
+            <summary>
+            Represents a hex value for an allowed color
+            </summary>
+            
+        </member>
+        <member name="T:Rebel.Cms.Web.PropertyEditors.NodeSelector.AbstractNodeFilter">
+            <summary>
+            The class that the dynamic filter inherits from
+            </summary>
+        </member>
+        <member name="T:Rebel.Cms.Web.PropertyEditors.NodeSelector.AbstractStartNodeQuery">
+            <summary>
+            The class that the dynamic start node query inherits from
+            </summary>
+        </member>
+        <member name="T:Rebel.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorHelper">
+            <summary>
+            Extension methods for use in templates to extract the HiveIds selected in the NodeSelector
+            </summary>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorHelper.SelectedContentEntities(Rebel.Framework.Persistence.Model.Attribution.TypedAttribute,System.Boolean,System.Boolean)">
+            <summary>
+            Returns all Content items selected
+            </summary>
+            <param name="attribute"></param>
+            <param name="includeUnpublished">true to include items that are currently unpublished, default is false</param>
+            <param name="includeRecycled">true to include items that have been recycled, default is false</param>
+            <returns></returns>
+            <remarks>
+            This method will only work if the attribute is configured to use a NodeSelector that has the Content tree selected as its tree type
+            </remarks>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorHelper.SelectedContentEntities(Rebel.Framework.Persistence.Model.Attribution.TypedAttribute)">
+            <summary>
+            Returns all Content items selected
+            </summary>
+            <param name="attribute"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorHelper.SelectedMediaEntities(Rebel.Framework.Persistence.Model.Attribution.TypedAttribute,System.Boolean,System.Boolean)">
+            <summary>
+            Returns all Media items selected
+            </summary>
+            <param name="attribute"></param>
+            <param name="includeUnpublished"></param>
+            <param name="includeRecycled"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorHelper.SelectedMediaEntities(Rebel.Framework.Persistence.Model.Attribution.TypedAttribute)">
+            <summary>
+            Returns all Media items selected
+            </summary>
+            <param name="attribute"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorHelper.SelectedContent(Rebel.Framework.Persistence.Model.Attribution.TypedAttribute,System.Boolean,System.Boolean)">
+            <summary>
+            Returns all Content selected as dynamic items
+            </summary>
+            <param name="attribute"></param>
+            <param name="includeUnpublished"></param>
+            <param name="includeRecycled"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorHelper.SelectedContent(Rebel.Framework.Persistence.Model.Attribution.TypedAttribute)">
+            <summary>
+            Returns all Content selected as dynamic items
+            </summary>
+            <param name="attribute"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorHelper.SelectedMedia(Rebel.Framework.Persistence.Model.Attribution.TypedAttribute,System.Boolean,System.Boolean)">
+            <summary>
+            Returns all Content selected as dynamic items
+            </summary>
+            <param name="attribute"></param>
+            <param name="includeUnpublished"></param>
+            <param name="includeRecycled"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorHelper.SelectedMedia(Rebel.Framework.Persistence.Model.Attribution.TypedAttribute)">
+            <summary>
+            Returns all Content selected as dynamic items
+            </summary>
+            <param name="attribute"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorHelper.SelectedNodeIds(Rebel.Framework.Persistence.Model.Attribution.TypedAttribute)">
+            <summary>
+            Returns the list of HiveIds selected with the NodeSelector
+            </summary>
+            <param name="attribute"></param>
+            <returns></returns>
+            <remarks>
+            This method will throw an exception if the attribute is not backed by a PropertyEditor of type NodeSelector
+            </remarks>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorHelper.GetItemsWithValidation``2(Rebel.Framework.Persistence.Model.Attribution.TypedAttribute,Rebel.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorEditor,System.Guid,System.Func{System.String},System.Boolean,System.Boolean,Rebel.Framework.HiveId)">
+            <summary>
+            Returns the items for either the requested Media or Content
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="TStore"></typeparam>
+            <param name="attribute"></param>
+            <param name="nodeSelector"></param>
+            <param name="treeId"></param>
+            <param name="errMsg"></param>
+            <param name="includeUnpublished"></param>
+            <param name="includeRecycled"></param>
+            <param name="recycleBinId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorHelper.GetItems``2(Rebel.Framework.HiveId[],System.Boolean,System.Boolean,Rebel.Framework.HiveId)">
+            <summary>
+            Returns the items for either the requested Media or Content
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="TStore"></typeparam>
+            <param name="selectedIds"></param>
+            <param name="includeUnpublished"></param>
+            <param name="includeRecycled"></param>
+            <param name="recycleBinId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorHelper.ValidateNodeSelectorPropertyEditor(Rebel.Framework.Persistence.Model.Attribution.TypedAttribute)">
+            <summary>
+            Ensures that the attribute is defined by a NodeSelector
+            </summary>
+            <param name="attribute"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Rebel.Cms.Web.PropertyEditors.NodeSelector.DataTypeUpdatedTask">
+            <summary>
+            Whenever an attribute type is updated, we need to invalidate the CodeDelegate hash code so the filters recompile.
+            </summary>
+        </member>
+        <member name="T:Rebel.Cms.Web.PropertyEditors.NodeSelector.CSharpExpressionsUtility">
+            <summary>
+            A utility class for initializing and executing the csharp expressions for the Node Selector
+            </summary>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.NodeSelector.CSharpExpressionsUtility.GetNodeFilterResult(Rebel.Cms.Web.Context.IBackOfficeRequestContext,Rebel.Framework.HiveId,Rebel.Cms.Web.PropertyEditors.NodeSelector.INodeSelectorDataSource,Rebel.Framework.HiveId)">
+            <summary>
+            Get the result of the CSharp code for the node filter
+            </summary>
+            <param name="dataTypeId"> </param>
+            <param name="ds"></param>
+            <param name="nodeId"></param>
+            <param name="backOfficeRequestContext"> </param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.NodeSelector.CSharpExpressionsUtility.GetStartNodeQueryResult(Rebel.Cms.Web.Context.IBackOfficeRequestContext,Rebel.Framework.HiveId,Rebel.Cms.Web.PropertyEditors.NodeSelector.INodeSelectorDataSource,Rebel.Framework.HiveId)">
+            <summary>
+            Get the result of the CSharp code for the start node query
+            </summary>
+            <param name="dataTypeId"> </param>
+            <param name="ds"></param>
+            <param name="nodeId"></param>
+            <param name="backOfficeRequestContext"> </param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.NodeSelector.CSharpExpressionsUtility.GetClassInstance``1(System.String)">
+            <summary>
+            Returns the class instance for the virtual Path id specified
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="virtualPathId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.NodeSelector.CSharpExpressionsUtility.GetFilter(Rebel.Cms.Web.Context.IBackOfficeRequestContext,System.Object,System.String)">
+            <summary>
+            This is the method that will execute in order to return the code snippet that will be compiled by the BuildManager for the node filter
+            </summary>
+            <param name="backOfficeRequestContext"> </param>
+            <param name="delegateParam"></param>
+            <param name="virtualPathId"> </param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.NodeSelector.CSharpExpressionsUtility.GetStartNodeQuery(Rebel.Cms.Web.Context.IBackOfficeRequestContext,System.Object,System.String)">
+            <summary>
+            This is the method that will execute in order to return the code snippet that will be compiled by the BuildManager for the start node query
+            </summary>
+            <param name="backOfficeRequestContext"></param>
+            <param name="delegateParam"></param>
+            <param name="virtualPathId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.NodeSelector.CSharpExpressionsUtility.GetCodeBlock(Rebel.Cms.Web.Context.IBackOfficeRequestContext,System.Object,System.String,System.Func{Rebel.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorPreValueModel,System.String,System.String})">
+            <summary>
+            This is the method that will execute in order to return the code snippet that will be compiled by the BuildManager 
+            </summary>
+            <param name="backOfficeRequestContext"></param>
+            <param name="delegateParam"></param>
+            <param name="virtualPathId"></param>
+            <param name="codeWrapper"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.NodeSelector.CSharpExpressionsUtility.WrapStartNodeQuery(Rebel.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorPreValueModel,System.String)">
+            <summary>
+            Creates a class out of the query
+            </summary>
+            <param name="preVals"></param>
+            <param name="virtualPathId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.NodeSelector.CSharpExpressionsUtility.WrapFilter(Rebel.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorPreValueModel,System.String)">
+            <summary>
+            Creates a class out of the filter
+            </summary>
+            <param name="preVals"></param>
+            <param name="virtualPathId"> </param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.NodeSelector.CSharpExpressionsUtility.SetupCodeDelegateForQuery(Rebel.Cms.Web.Context.IBackOfficeRequestContext,Rebel.Framework.HiveId)">
+            <summary>
+            Ensures that the code delegate for the filter is in the CodeDelegatesCollection
+            </summary>
+            <param name="backOfficeRequestContext"></param>
+            <param name="dataTypeId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.NodeSelector.CSharpExpressionsUtility.SetupCodeDelegateForFilter(Rebel.Cms.Web.Context.IBackOfficeRequestContext,Rebel.Framework.HiveId)">
+            <summary>
+            Ensures that the code delegate for the filter is in the CodeDelegatesCollection
+            </summary>
+            <param name="backOfficeRequestContext"> </param>
+            <param name="dataTypeId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.NodeSelector.CSharpExpressionsUtility.SetupCodeDelegate(Rebel.Cms.Web.Context.IBackOfficeRequestContext,Rebel.Framework.HiveId,Rebel.Cms.Web.PropertyEditors.NodeSelector.CSharpCodeBlockType,System.Func{System.Object,System.String,System.String})">
+            <summary>
+            Ensures that the code delegate for the filter is in the CodeDelegatesCollection
+            </summary>
+            <param name="backOfficeRequestContext"></param>
+            <param name="dataTypeId"></param>
+            <param name="blockType"></param>
+            <param name="codedelegate"> </param>
+            <returns></returns>
+        </member>
+        <member name="T:Rebel.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorContentTreeControllerHelper">
+            <summary>
+            A helper class that is used by both the Media and Content enabled NodeSelector trees in order to 
+            not duplicate a ton of code.
+            </summary>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorContentTreeControllerHelper.GetRootNodeIdForRequest(System.Func{Rebel.Framework.HiveId})">
+            <summary>
+            If a request is received with a querystring directive of
+            TreeQueryStringParameters.RenderParent, then we'll dynamically set the RootNodeId to the one
+            being requested.
+            </summary>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorContentTreeControllerHelper.GetTreeData(Rebel.Framework.HiveId,System.Web.Mvc.FormCollection,Rebel.Framework.HiveId,Rebel.Cms.Web.Model.BackOffice.Trees.TreeNodeCollection,System.Func{System.Web.Mvc.FormCollection,Rebel.Cms.Web.Model.BackOffice.Trees.TreeNode},System.Func{Rebel.Cms.Web.Trees.RebelTreeResult},System.Func{Rebel.Framework.HiveId,System.Web.Mvc.FormCollection,Rebel.Cms.Web.Trees.RebelTreeResult})">
+            <summary>
+            Check if the querystring directive of TreeQueryStringParameters.RenderParent is true, if so then
+            set the _dynamicRootNodeId value to the one being requested and only return the root node, otherwise
+            proceed as normal.
+            </summary>
+            <param name="parentId"></param>
+            <param name="queryStrings"></param>
+            <param name="actualRootNodeId"> </param>
+            <param name="nodeCollection"> </param>
+            <param name="createRootNode"> </param>
+            <param name="returnResult"> </param>
+            <param name="returnDefaultResult"> </param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorContentTreeControllerHelper.CreateRootNode(System.Web.Mvc.FormCollection,System.Func{System.Web.Mvc.FormCollection,Rebel.Cms.Web.Model.BackOffice.Trees.TreeNode})">
+            <summary>
+            Creates the root node so we can ensure the correct metadata is applied to it.
+            </summary>
+            <param name="queryStrings"></param>
+            <param name="createRootNode"> </param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorContentTreeControllerHelper.GetNodeSelectorItemModel(Rebel.Framework.HiveId,System.Guid,System.Func{System.Web.Mvc.UrlHelper})">
+            <summary>
+            Returns the model for each NodeSelector persisted item
+            </summary>
+            <param name="id"></param>
+            <param name="treeId"> </param>
+            <param name="url"> </param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorContentTreeControllerHelper.GetPaths(Rebel.Framework.HiveId,System.Guid)">
+            <summary>
+            Returns the paths for the specified HiveId
+            </summary>
+            <param name="id"></param>
+            <param name="treeId"> </param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorContentTreeControllerHelper.GetTooltipContents(Rebel.Framework.HiveId,System.Guid,System.Func{System.Object,Rebel.Framework.Persistence.Model.TypedEntity,System.String,Rebel.Cms.Web.PropertyEditors.NodeSelector.TooltipContents},System.Func{Rebel.Framework.HiveId,System.Web.Mvc.FormCollection,System.String})">
+            <summary>
+            Returns the content to display in the tooltip
+            </summary>
+            <param name="id"></param>
+            <param name="treeId"></param>
+            <param name="createTooltipContents"> </param>
+            <param name="getEditorUrl"> </param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorContentTreeControllerHelper.GetMediaUrl(Rebel.Framework.HiveId,System.Guid,System.String,System.Func{System.Web.Mvc.UrlHelper})">
+            <summary>
+            Returns the url for the media item
+            </summary>
+            <param name="id"></param>
+            <param name="treeId"></param>
+            <param name="propertyAlias"></param>
+            <param name="url"> </param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorContentTreeControllerHelper.GetEntity(Rebel.Framework.HiveId)">
+            <summary>
+            Returns an entity given a HiveId
+            </summary>
+            <param name="nodeId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorContentTreeControllerHelper.GetRootNodeIdForTree(System.Func{Rebel.Framework.HiveId})">
+            <summary>
+            Returns the root node id defined by the tree
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Rebel.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorMediaTreeController">
+            <summary>
+            A NodeSelector Media compatible tree
+            </summary>
+        </member>
+        <member name="T:Rebel.Cms.Web.PropertyEditors.NodeSelector.INodeSelectorDataSource">
+            <summary>
+            Any NodeSelectorCompatible tree must declare an instance of this type in order for the NodeSelector to resolve
+            the model for each persisted item.
+            </summary>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.NodeSelector.INodeSelectorDataSource.GetNodeSelectorItemModel(Rebel.Framework.HiveId,System.Guid)">
+            <summary>
+            Returns the model representing each persisted item
+            </summary>
+            <param name="id"></param>
+            /// <param name="treeId">The Id of the tree type being rendered</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.NodeSelector.INodeSelectorDataSource.GetPaths(Rebel.Framework.HiveId,System.Guid)">
+            <summary>
+            Returns the path data used to sync the tree
+            </summary>
+            <param name="id"></param>
+            /// <param name="treeId">The Id of the tree type being rendered</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.NodeSelector.INodeSelectorDataSource.GetTooltipContents(Rebel.Framework.HiveId,System.Guid)">
+            <summary>
+            Returns the contents to display in the tooltip for the given element Id
+            </summary>
+            <param name="id"></param>
+            <param name="treeId">The Id of the tree type being rendered</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.NodeSelector.INodeSelectorDataSource.GetMediaUrl(Rebel.Framework.HiveId,System.Guid,System.String)">
+            <summary>
+            Returns the media URL for the specified media item based on the attribute alias
+            </summary>
+            <param name="id"></param>
+            <param name="treeId"></param>
+            <param name="propertyAlias"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.NodeSelector.INodeSelectorDataSource.GetEntity(Rebel.Framework.HiveId)">
+            <summary>
+            Returns a TypedEntity based on the id
+            </summary>
+            <param name="nodeId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.NodeSelector.INodeSelectorDataSource.GetRootNodeId">
+            <summary>
+            Returns the root node id for the current tree
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorMediaTreeController.CreateRootNode(System.Web.Mvc.FormCollection)">
+            <summary>
+            Overrides creating the root node so we can ensure the correct metadata is applied to it.
+            </summary>
+            <param name="queryStrings"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorMediaTreeController.GetTreeData(Rebel.Framework.HiveId,System.Web.Mvc.FormCollection)">
+            <summary>
+            Returns the tree data for the specified node taking into account if a TreeQueryStringParameters.RenderParent
+            is set to true.
+            </summary>
+            <param name="parentId"></param>
+            <param name="queryStrings"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorMediaTreeController.GetNodeSelectorItemModel(Rebel.Framework.HiveId,System.Guid)">
+            <summary>
+            Returns the model for each NodeSelector persisted item
+            </summary>
+            <param name="id"></param>
+            <param name="treeId"> </param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorMediaTreeController.GetPaths(Rebel.Framework.HiveId,System.Guid)">
+            <summary>
+            Returns the paths for the specified HiveId
+            </summary>
+            <param name="id"></param>
+            <param name="treeId"> </param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorMediaTreeController.GetTooltipContents(Rebel.Framework.HiveId,System.Guid)">
+            <summary>
+            Returns the content to display in the tooltip
+            </summary>
+            <param name="id"></param>
+            <param name="treeId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorMediaTreeController.GetMediaUrl(Rebel.Framework.HiveId,System.Guid,System.String)">
+            <summary>
+            Returns the url for the media item
+            </summary>
+            <param name="id"></param>
+            <param name="treeId"></param>
+            <param name="propertyAlias"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorMediaTreeController.GetEntity(Rebel.Framework.HiveId)">
+            <summary>
+            Returns an entity given a HiveId
+            </summary>
+            <param name="nodeId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorMediaTreeController.GetRootNodeId">
+            <summary>
+            Returns the root node id defined by the tree
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorMediaTreeController.EnsureInitialized">
+            <summary>
+            Used by the INodeSelectorDataSource because it executes in a context outside of a normal request,
+            so we need to ensure this controller is initialized so we resolve the current request from IoC and 
+            manually initialize.
+            </summary>
+        </member>
+        <member name="P:Rebel.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorMediaTreeController.RootNodeId">
+            <summary>
+            We override the RootNodeId because if a request is received with a querystring directive of
+            TreeQueryStringParameters.RenderParent, then we'll dynamically set the RootNodeId to the one
+            being requested.
+            </summary>
+        </member>
+        <member name="F:Rebel.Cms.Web.PropertyEditors.NodeSelector.StartNodeSelectionType.UsePicker">
+            <summary>
+            Selects the start node id using a node picker
+            </summary>
+        </member>
+        <member name="F:Rebel.Cms.Web.PropertyEditors.NodeSelector.StartNodeSelectionType.UseQuery">
+            <summary>
+            Selects the start node id using a query
+            </summary>
+        </member>
+        <member name="P:Rebel.Cms.Web.PropertyEditors.UserGroupPicker.UserGroupPickerEditorModel.Value">
+            <summary>
+            Gets or sets the value (the type alias).
+            </summary>
+            <value>
+            The value.
+            </value>
+        </member>
+        <member name="P:Rebel.Cms.Web.PropertyEditors.UserGroupPicker.UserGroupPickerEditorModel.AvailableTypes">
+            <summary>
+            Gets the available types.
+            </summary>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.UserGroupPicker.UserGroupPickerPreValueModel.GetAvailableTypes">
+            <summary>
+            Gets the available types.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.UserGroupPicker.UserGroupPickerPreValueModel.SetModelValues(System.String)">
+            <summary>
+            Get the list of Ids and create the select list
+            </summary>
+            <param name="serializedVal"></param>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.UserGroupPicker.UserGroupPickerPreValueModel.GetSerializedValue">
+            <summary>
+            Return a serialized string of values for the pre value editor model
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Rebel.Cms.Web.PropertyEditors.UserGroupPicker.UserGroupPickerPreValueModel.IsRequired">
+            <summary>
+            Gets or sets a value indicating whether this instance is required.
+            </summary>
+            <value>
+            	<c>true</c> if this instance is required; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Rebel.Cms.Web.PropertyEditors.UserGroupPicker.UserGroupPickerPreValueModel.Type">
+            <summary>
+            Gets or sets the type.
+            </summary>
+            <value>
+            The type.
+            </value>
+        </member>
+        <member name="P:Rebel.Cms.Web.PropertyEditors.UserGroupPicker.UserGroupPickerPreValueModel.AvailableTypes">
+            <summary>
+            Gets or sets the available types.
+            </summary>
+            <value>
+            The available types.
+            </value>
+        </member>
+        <member name="T:Rebel.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorCompatibleAttribute">
+            <summary>
+            Any tree that is attributed with this attribute will show up in the NodeSelector available trees
+            </summary>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorDataSourceExtensions.CreateTooltipContentsViaTask(Rebel.Cms.Web.PropertyEditors.NodeSelector.INodeSelectorDataSource,System.Object,Rebel.Framework.Persistence.Model.TypedEntity,System.String,System.Int32,System.Int32)">
+            <summary>
+            Returns the TooltipContents after proxying through the task system to allow developers to modify the output
+            </summary>
+            <param name="ds"></param>
+            <param name="sender"></param>
+            <param name="entity"> </param>
+            <param name="htmlContent"></param>
+            <param name="width"></param>
+            <param name="height"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorEditor.#ctor(Rebel.Cms.Web.Context.IBackOfficeRequestContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Rebel.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorEditor"/> class.
+            </summary>
+            <param name="backOfficeRequestContext">The back office request context.</param>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorEditor.CreateEditorModel(Rebel.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorPreValueModel)">
+            <summary>
+            Creates the editor model
+            </summary>
+            <param name="preValues"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorEditor.CreatePreValueEditorModel">
+            <summary>
+            Creates the pre value model
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorEditorModel.#ctor(Rebel.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorPreValueModel,Rebel.Cms.Web.Context.IBackOfficeRequestContext,Rebel.Framework.HiveId,System.String,Rebel.Framework.HiveId)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Rebel.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorEditorModel"/> class.
+            </summary>
+            <param name="preValueModel"> </param>
+            <param name="backOfficeRequestContext">The back office request context.</param>
+            <param name="contentId">The current id of the content item being rendered.</param>
+            <param name="propertyAlias">The current alias of the property being rendered.</param>
+            <param name="dataTypeId"> </param>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorEditorModel.GetSerializedValue">
+            <summary>
+            Returns a serialized value for the Editor Model
+            </summary>
+            <returns></returns>
+            <remarks>
+            This Editor stores a list of saved items, each list item key name is simply 'val' + the index of the item.
+            When using this value in the front end, the key shouldn't really matter in usage.
+            </remarks>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorEditorModel.SetModelValues(System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Builds up the PersistedItems property
+            </summary>
+            <param name="serializedVal"></param>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorEditorModel.Validate(System.ComponentModel.DataAnnotations.ValidationContext)">
+            <summary>
+            Executes custom server side validation for the model
+            </summary>
+            <param name="validationContext"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Rebel.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorEditorModel.DataTypeId">
+            <summary>
+            Used in a hidden field in order for a JSON request that is required to be sent to the server which contains the current
+            property's data type id
+            </summary>
+            <remarks>
+            We only want the string representation of the HiveId
+            </remarks>
+        </member>
+        <member name="P:Rebel.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorEditorModel.TreeModel">
+            <summary>
+            The tree model used to render the tree
+            </summary>
+        </member>
+        <member name="P:Rebel.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorEditorModel.StartNode">
+            <summary>
+            The start node to display above the tree
+            </summary>
+        </member>
+        <member name="P:Rebel.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorEditorModel.ErrorMessage">
+            <summary>
+            Displays an error message that may occur when trying to create the model
+            </summary>
+        </member>
+        <member name="P:Rebel.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorEditorModel.Value">
+            <summary>
+            Gets/sets the value
+            </summary>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorPreValueModel.GetAvailableTrees">
+            <summary>
+            Returns the trees available within rebel
+            </summary>
+            <returns></returns>
+            <remarks>
+            The value portion is the JsonObject of the HiveId which is wrapping the tree GUID Id since we need to have the JSON version of the
+            HiveId in JavaScript and we don't have a JS parser/generator for HiveId since we'd like to keep this in c# only.
+            </remarks>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorPreValueModel.SetModelValues(System.String)">
+            <summary>
+            Assign the AvailableTrees when model values are set and ensure the correct tree is selected in the 
+            select list.
+            </summary>
+            <param name="serializedVal"></param>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorPreValueModel.Validate(System.ComponentModel.DataAnnotations.ValidationContext)">
+            <summary>
+            Executes custom server side validation for the model
+            </summary>
+            <param name="validationContext"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Rebel.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorPreValueModel.AvailableTrees">
+            <summary>
+            Gets or sets the available trees.
+            </summary>
+            <value>
+            The available trees.
+            </value>
+        </member>
+        <member name="P:Rebel.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorPreValueModel.SelectedTree">
+            <summary>
+            The Id of the selected tree to render
+            </summary>        
+        </member>
+        <member name="P:Rebel.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorPreValueModel.StartNodeId">
+            <summary>
+            The start node id used when the node selection is a picker
+            </summary>
+        </member>
+        <member name="P:Rebel.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorPreValueModel.ShowThumbnails">
+            <summary>
+            A boolean value indicating whether or not to show the thumbnails
+            </summary>        
+        </member>
+        <member name="P:Rebel.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorPreValueModel.ThumbnailPropertyName">
+            <summary>
+            The property name used as the source of the thumbnail to show
+            </summary>
+        </member>
+        <member name="P:Rebel.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorPreValueModel.EditorHeight">
+            <summary>
+             The editor height in pixels
+            </summary>        
+        </member>
+        <member name="P:Rebel.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorPreValueModel.ShowToolTip">
+            <summary>
+            Whether or not to display the tooltip
+            </summary>
+        </member>
+        <member name="P:Rebel.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorPreValueModel.MinNodeCount">
+            <summary>
+            The minimum amount of nodes that are able to be selected
+            </summary>
+        </member>
+        <member name="P:Rebel.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorPreValueModel.MaxNodeCount">
+            <summary>
+            The maximum amount of nodes that are able to be selected
+            </summary>
+        </member>
+        <member name="T:Rebel.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorContentTreeController">
+            <summary>
+            A NodeSelector Content compatible tree
+            </summary>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorContentTreeController.CreateRootNode(System.Web.Mvc.FormCollection)">
+            <summary>
+            Overrides creating the root node so we can ensure the correct metadata is applied to it.
+            </summary>
+            <param name="queryStrings"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorContentTreeController.GetTreeData(Rebel.Framework.HiveId,System.Web.Mvc.FormCollection)">
+            <summary>
+            Returns the tree data for the specified node taking into account if a TreeQueryStringParameters.RenderParent
+            is set to true.
+            </summary>
+            <param name="parentId"></param>
+            <param name="queryStrings"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorContentTreeController.GetNodeSelectorItemModel(Rebel.Framework.HiveId,System.Guid)">
+            <summary>
+            Returns the model for each NodeSelector persisted item
+            </summary>
+            <param name="id"></param>
+            <param name="treeId"> </param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorContentTreeController.GetPaths(Rebel.Framework.HiveId,System.Guid)">
+            <summary>
+            Returns the paths for the specified HiveId
+            </summary>
+            <param name="id"></param>
+            <param name="treeId"> </param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorContentTreeController.GetTooltipContents(Rebel.Framework.HiveId,System.Guid)">
+            <summary>
+            Returns the content to display in the tooltip
+            </summary>
+            <param name="id"></param>
+            <param name="treeId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorContentTreeController.GetMediaUrl(Rebel.Framework.HiveId,System.Guid,System.String)">
+            <summary>
+            Returns the url for the media item
+            </summary>
+            <param name="id"></param>
+            <param name="treeId"></param>
+            <param name="propertyAlias"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorContentTreeController.GetEntity(Rebel.Framework.HiveId)">
+            <summary>
+            Returns an entity given a HiveId
+            </summary>
+            <param name="nodeId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorContentTreeController.GetRootNodeId">
+            <summary>
+            Returns the root node id defined by the tree
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorContentTreeController.EnsureInitialized">
+            <summary>
+            Used by the INodeSelectorDataSource because it executes in a context outside of a normal request,
+            so we need to ensure this controller is initialized so we resolve the current request from IoC and 
+            manually initialize.
+            </summary>
+        </member>
+        <member name="P:Rebel.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorContentTreeController.RootNodeId">
+            <summary>
+            We override the RootNodeId because if a request is received with a querystring directive of
+            TreeQueryStringParameters.RenderParent, then we'll dynamically set the RootNodeId to the one
+            being requested.
+            </summary>
+        </member>
+        <member name="T:Rebel.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorTaskTriggers">
+            <summary>
+            Constants defining the task triggers supported by the NodeSelector
+            </summary>
+        </member>
+        <member name="T:Rebel.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorTooltipEventArgs">
+            <summary>
+            Used as Task argument for the GetTooltipContents task trigger
+            </summary>
+        </member>
+        <member name="T:Rebel.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorUtilityController">
+            <summary>
+            A utility controller for the NodeSelector
+            </summary>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorUtilityController.IsNodeSelectable(Rebel.Framework.HiveId,Rebel.Framework.HiveId,System.Guid)">
+            <summary>
+            Checks if the node is selectable when clicked based on the filter applied on the prevalue editor
+            </summary>
+            <param name="dataTypeId"></param>
+            <param name="nodeId"></param>
+            <param name="treeId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorUtilityController.GetMediaUrl(Rebel.Framework.HiveId,System.Guid,System.String)">
+            <summary>
+            Returns the media url for a media item given the entity id and the attribute alias, this proxies the request to the
+            current NodeSelector data source
+            </summary>
+            <param name="id"></param>
+            <param name="treeId"></param>
+            <param name="attributeAlias"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorUtilityController.GetTooltipContent(Rebel.Framework.HiveId,System.Guid)">
+            <summary>
+            returns the tooltip contents for the entity
+            </summary>
+            <param name="id"></param>
+            <param name="treeId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorUtilityController.GetPath(Rebel.Framework.HiveId,System.Guid)">
+            <summary>
+            Returns the EntityPaths for the specified HiveId from the treeId specified which must be NodeSelectorCompatible.
+            </summary>
+            <param name="id"></param>
+            <param name="treeId"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Rebel.Cms.Web.PropertyEditors.NodeSelector.SelectedItemModel">
+            <summary>
+            A Model representing the data required to display the previously persisted items including the name, id, icon/style
+            </summary>    
+        </member>
+        <member name="P:Rebel.Cms.Web.PropertyEditors.NodeSelector.SelectedItemModel.ThumbnailUrl">
+            <summary>
+            The image url of the item if we are showing thumbnails
+            </summary>
+        </member>
+        <member name="T:Rebel.Cms.Web.PropertyEditors.NodeSelector.TooltipContents">
+            <summary>
+            The response object for setting the tooltip content
+            </summary>
+        </member>
+        <member name="P:Rebel.Cms.Web.PropertyEditors.NodeSelector.TooltipContents.HtmlContent">
+            <summary>
+            The content to display in the tooltip
+            </summary>
+        </member>
+        <member name="P:Rebel.Cms.Web.PropertyEditors.NodeSelector.TooltipContents.Width">
+            <summary>
+            The width of the tooltip to render, if not set, will remain the default
+            </summary>
+        </member>
+        <member name="P:Rebel.Cms.Web.PropertyEditors.NodeSelector.TooltipContents.Height">
+            <summary>
+            The height of the tooltip to render, if not set, will remain the default
+            </summary>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.NodeSelector.TreePluginExtensions.GetNodeSelectorDataSource(System.Collections.Generic.IEnumerable{System.Lazy{Rebel.Cms.Web.Trees.TreeController,Rebel.Cms.Web.Model.BackOffice.Trees.TreeMetadata}},System.Guid)">
+            <summary>
+            Returns the INodeSelectorDataSource for the tree requested, if the tree does not support this then an exception will be thrown.
+            </summary>
+            <param name="registeredTrees"></param>
+            <param name="treeId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.RichTextBox.TinyMCE.Controllers.InsertLinkController.InsertLink">
+            <summary>
+            Inserts the link.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.RichTextBox.TinyMCE.Controllers.InsertMediaController.InsertMedia">
+            <summary>
+            Inserts the media.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.RichTextBox.TinyMCE.Controllers.InsertMediaController.GetMediaParameters(Rebel.Framework.HiveId)">
+            <summary>
+            Gets the media parameters.
+            </summary>
+            <param name="EntitySchemaToDocumentTypeEditorModel">The media id.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.RichTextBox.TinyMCE.Controllers.InsertMediaController.AllowsUpload(Rebel.Framework.HiveId)">
+            <summary>
+            Allowses the upload.
+            </summary>
+            <param name="mediaId">The media id.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.RichTextBox.TinyMCE.Controllers.InsertMediaController.GetPossibleMediaTypes(Rebel.Framework.HiveId)">
+            <summary>
+            Gets the possible media types.
+            </summary>
+            <param name="mediaId">The media id.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.RichTextBox.TinyMCE.Controllers.InsertMediaController.GetMediaPreview(Rebel.Framework.HiveId)">
+            <summary>
+            Gets the media preview.
+            </summary>
+            <param name="mediaId">The media id.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.RichTextBox.TinyMCE.Controllers.InsertMediaController.GetMediaMarkup(Rebel.Framework.HiveId,System.String)">
+            <summary>
+            Gets the media markup.
+            </summary>
+            <param name="mediaId">The media id.</param>
+            <param name="mediaParameters">The media parameters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.RichTextBox.TinyMCE.Controllers.InsertMacroController.SelectMacro(Rebel.Framework.HiveId,System.Boolean)">
+            <summary>
+            Inserts the macro.
+            </summary>
+            <param name="contentId">The current node id.</param>
+            <param name="isNew">if set to <c>true</c> [is new].</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.RichTextBox.TinyMCE.Controllers.InsertMacroController.SetParameters(Rebel.Framework.HiveId,System.String,System.Boolean,System.String,System.String)">
+            <summary>
+            Inserts the macro.
+            </summary>
+            <param name="contentId">The current node id.</param>
+            <param name="macroAlias">The macro alias.</param>
+            <param name="isNew">if set to <c>true</c> is new.</param>
+            <param name="inlineMacroId">The inline macro id.</param>
+            <param name="macroParameters">The macro parameters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.RichTextBox.TinyMCE.Controllers.InsertMacroController.SetParametersForm(Rebel.Framework.HiveId,System.String,System.Boolean,System.String)">
+            <summary>
+            Inserts the macro.
+            </summary>
+            <param name="contentId">The content id.</param>
+            <param name="macroAlias">The macro alias.</param>
+            <param name="isNew">if set to <c>true</c> is new.</param>
+            <param name="inlineMacroId">The inline macro id.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.RichTextBox.TinyMCE.Controllers.InsertMacroController.GetMacroByAlias(System.String)">
+            <summary>
+            Gets a macro by alias.
+            </summary>
+            <param name="alias">The alias.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.RichTextBox.TinyMCE.Controllers.InsertMacroController.BindModel(System.Object,System.String)">
+            <summary>
+            Binds the model.
+            </summary>
+            <param name="model">The model.</param>
+            <param name="fieldPrefix">The field prefix.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.RichTextBox.TinyMCE.Controllers.InsertCharController.InsertChar">
+            <summary>
+            Action to render the insert char dialog.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.RichTextBox.TinyMCE.Controllers.InsertAnchorController.InsertAnchor">
+            <summary>
+            Action to render the insert anchor dialog.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Rebel.Cms.Web.PropertyEditors.RichTextBox.Resources.RichTextBoxResources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Rebel.Cms.Web.PropertyEditors.RichTextBox.Resources.RichTextBoxResources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Rebel.Cms.Web.PropertyEditors.RichTextBox.Resources.RichTextBoxResources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Rebel.Cms.Web.PropertyEditors.RichTextBox.Resources.RichTextBoxResources.FeaturesList">
+             <summary>
+               Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
+            &lt;features&gt;
+              &lt;feature name=&quot;Highlight&quot; alias=&quot;backcolor&quot; /&gt;
+              &lt;feature name=&quot;Bold&quot; alias=&quot;bold&quot; /&gt;
+              &lt;feature name=&quot;Bulleted List&quot; alias=&quot;bullist&quot; /&gt;
+              &lt;feature name=&quot;Numbered List&quot; alias=&quot;numlist&quot; /&gt;
+              &lt;feature name=&quot;Symbols&quot; alias=&quot;rebelcharmap&quot; /&gt;
+              &lt;feature name=&quot;Cleanup&quot; alias=&quot;cleanup&quot; /&gt;
+              &lt;feature name=&quot;Html&quot; alias=&quot;code&quot; /&gt;
+              &lt;feature name=&quot;Copy&quot; alias=&quot;copy&quot; /&gt;
+              &lt;feature name=&quot;Cut&quot; alias=&quot;cut&quot; /&gt;
+              &lt;feature name=&quot;Help&quot; alias=&quot;help&quot; /&gt;
+              &lt;featu [rest of string was truncated]&quot;;.
+             </summary>
+        </member>
+        <member name="T:Rebel.Cms.Web.PropertyEditors.TreeNodePicker.TreeNodePickerPreValueModelBinder">
+            <summary>
+            Model binder for the tree node picker prevaluemodel which helps the binding of the selected tree type
+            </summary>
+        </member>
+        <member name="T:Rebel.Cms.Web.PropertyEditors.TreePickers">
+            <summary>
+            A static collection of trees that can be used in Tree Pickers.
+            This collection can be modified at runtime in order to be able to add/remove trees that will be available in 
+            any tree picker.
+            </summary>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.TreePickers.#cctor">
+            <summary>
+            Constructor sets the Media and Content trees to be available by default.
+            </summary>
+        </member>
+        <member name="P:Rebel.Cms.Web.PropertyEditors.TreePickers.Trees">
+            <summary>
+            Returns the Tree Ids available to be rendered in any tree picker.
+            </summary>
+        </member>
+        <member name="P:Rebel.Cms.Web.PropertyEditors.TypePicker.TypePickerEditorModel.Value">
+            <summary>
+            Gets or sets the value (the type alias).
+            </summary>
+            <value>
+            The value.
+            </value>
+        </member>
+        <member name="P:Rebel.Cms.Web.PropertyEditors.TypePicker.TypePickerEditorModel.AvailableTypes">
+            <summary>
+            Gets the available types.
+            </summary>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.TypePicker.TypePickerPreValueModel.GetAvailableTypes">
+            <summary>
+            Gets the available types.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.TypePicker.TypePickerPreValueModel.SetModelValues(System.String)">
+            <summary>
+            Get the list of Ids and create the select list
+            </summary>
+            <param name="serializedVal"></param>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.TypePicker.TypePickerPreValueModel.GetSerializedValue">
+            <summary>
+            Return a serialized string of values for the pre value editor model
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Rebel.Cms.Web.PropertyEditors.TypePicker.TypePickerPreValueModel.IsRequired">
+            <summary>
+            Gets or sets a value indicating whether this instance is required.
+            </summary>
+            <value>
+            	<c>true</c> if this instance is required; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Rebel.Cms.Web.PropertyEditors.TypePicker.TypePickerPreValueModel.Type">
+            <summary>
+            Gets or sets the type.
+            </summary>
+            <value>
+            The type.
+            </value>
+        </member>
+        <member name="P:Rebel.Cms.Web.PropertyEditors.TypePicker.TypePickerPreValueModel.AvailableTypes">
+            <summary>
+            Gets or sets the available types.
+            </summary>
+            <value>
+            The available types.
+            </value>
+        </member>
+        <member name="T:Rebel.Cms.Web.PropertyEditors.RebelSystemEditors.SelectedTemplate.SelectedTemplateEditor">
+            <summary>
+            Represents the Selected Template editor for a content item
+            </summary>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.RebelSystemEditors.SelectedTemplate.SelectedTemplateEditor.#ctor(Rebel.Cms.Web.Context.IBackOfficeRequestContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Rebel.Cms.Web.PropertyEditors.RebelSystemEditors.SelectedTemplate.SelectedTemplateEditor"/> class.
+            </summary>
+            <param name="backOfficeRequestContext">The back office request context.</param>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.RebelSystemEditors.SelectedTemplate.SelectedTemplateEditor.CreateEditorModel">
+            <summary>
+            Creates the editor model.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Rebel.Cms.Web.PropertyEditors.RebelSystemEditors.SelectedTemplate.SelectedTemplateEditorModel">
+            <summary>
+            Represents the editor for the Selected Template in the content editor
+            </summary>
+        </member>
+        <member name="P:Rebel.Cms.Web.PropertyEditors.RebelSystemEditors.SelectedTemplate.SelectedTemplateEditorModel.TemplateId">
+            <summary>
+            Gets or sets the template Id selected
+            </summary>
+            <value>
+            The name.
+            </value>    
+            <remarks>
+            (APN) Note that the model's TemplateId property has been changed to HiveId? because currently the modelmetadata
+            is considering a non-nullable value type to be implicitly required, making it impossible to save content without a template assigned (Sep 11)
+            </remarks>
+        </member>
+        <member name="P:Rebel.Cms.Web.PropertyEditors.RebelSystemEditors.SelectedTemplate.SelectedTemplateEditorModel.AvailableTemplates">
+            <summary>
+            Gets or sets the available templates.
+            </summary>
+            <value>
+            The available templates.
+            </value>
+        </member>
+        <member name="T:Rebel.Cms.Web.PropertyEditors.DateTimePicker.JQueryUIDatePickerHelper">
+            <summary>
+            JQuery UI DatePicker helper.
+            </summary>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.DateTimePicker.JQueryUIDatePickerHelper.ConvertDateFormat(System.Web.Mvc.HtmlHelper)">
+            <summary>
+            Converts the .net supported date format current culture format into JQuery Datepicker format.
+            </summary>
+            <param name="html">HtmlHelper object.</param>
+            <returns>Format string that supported in JQuery Datepicker.</returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.DateTimePicker.JQueryUIDatePickerHelper.ConvertDateFormat(System.Web.Mvc.HtmlHelper,System.String)">
+            <summary>
+            Converts the .net supported date format current culture format into JQuery Datepicker format.
+            </summary>
+            <param name="html">HtmlHelper object.</param>
+            <param name="format">Date format supported by .NET.</param>
+            <returns>Format string that supported in JQuery Datepicker.</returns>
+        </member>
+        <member name="T:Rebel.Cms.Web.PropertyEditors.Label.LabelEditor">
+            <summary>
+            The Label property editor
+            </summary>
+        </member>
+        <member name="T:Rebel.Cms.Web.PropertyEditors.Label.LabelEditorModel">
+            <summary>
+            The model for the label property editor
+            </summary>
+        </member>
+        <member name="P:Rebel.Cms.Web.PropertyEditors.Label.LabelEditorModel.Value">
+            <summary>
+            The Label value
+            </summary>
+        </member>
+        <member name="P:Rebel.Cms.Web.PropertyEditors.RebelSystemEditors.NodeName.NodeNameEditorModel.Name">
+            <summary>
+            Gets or sets the name of the node
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="P:Rebel.Cms.Web.PropertyEditors.RebelSystemEditors.NodeName.NodeNameEditorModel.UrlName">
+            <summary>
+            Gets or sets the name of the URL.
+            </summary>
+            <value>
+            The name of the URL.
+            </value>
+        </member>
+        <member name="P:Rebel.Cms.Web.PropertyEditors.RebelSystemEditors.NodeName.NodeNameEditorModel.UrlAliases">
+            <summary>
+            Gets or sets the URL aliases.
+            </summary>
+            <value>
+            The URL aliases.
+            </value>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.RichTextBox.RichTextBoxEditorModel.CreateToolbarButtons">
+            <summary>
+            Creates the toolbar buttons.
+            </summary>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.RichTextBox.RichTextBoxEditorModel.GetStylesheetFiles">
+            <summary>
+            Gets the stylesheet files.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Rebel.Cms.Web.PropertyEditors.RichTextBox.RichTextBoxEditorModel.AppContext">
+            <summary>
+            Gets the app context.
+            </summary>
+        </member>
+        <member name="P:Rebel.Cms.Web.PropertyEditors.RichTextBox.RichTextBoxEditorModel.ShowRebelLabel">
+            <summary>
+            Based on the pre-value options, the rebel label will be toggled
+            </summary>
+        </member>
+        <member name="P:Rebel.Cms.Web.PropertyEditors.RichTextBox.RichTextBoxEditorModel.CurrentNodeId">
+            <summary>
+            The current node id rendering the editor, this is required to render some TinyMCE Plugins but will be null if its new content
+            </summary>
+        </member>
+        <member name="P:Rebel.Cms.Web.PropertyEditors.RichTextBox.RichTextBoxEditorModel.Value">
+            <summary>
+            Gets or sets the RichTextBox value
+            </summary>
+            <value>
+            The value.
+            </value>
+        </member>
+        <member name="P:Rebel.Cms.Web.PropertyEditors.RichTextBox.RichTextBoxEditorModel.Stylesheets">
+            <summary>
+            Gets a list of stylesheets for the RichTextBox
+            </summary>
+        </member>
+        <member name="T:Rebel.Cms.Web.PropertyEditors.RichTextBox.RichTextBoxPreValueModel">
+            <summary>
+            Represents the rich text box pre-value editor
+            </summary>    
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.RichTextBox.RichTextBoxPreValueModel.GetFeatures">
+            <summary>
+            Returns the features that TinyMCE is capable of supporting (i.e. bold, italic, etc...)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.RichTextBox.RichTextBoxPreValueModel.GetStylesheets">
+            <summary>
+            Returns the stylesheets available within rebel
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.RichTextBox.RichTextBoxPreValueModel.GetSerializedValue">
+            <summary>
+            Return a serialized string of values for the pre value editor model
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.RichTextBox.RichTextBoxPreValueModel.SetModelValues(System.String)">
+            <summary>
+            set the pre values from the serialized values in the repository
+            </summary>
+            <param name="serializedVal"></param>
+        </member>
+        <member name="P:Rebel.Cms.Web.PropertyEditors.RichTextBox.RichTextBoxPreValueModel.ValidElements">
+            <summary>
+            The valid TinyMCE elements to support, by default this is empty which means TinyMCE will use the defaults
+            see: http://www.tinymce.com/wiki.php/Configuration:valid_elements
+            </summary>
+        </member>
+        <member name="P:Rebel.Cms.Web.PropertyEditors.RichTextBox.RichTextBoxPreValueModel.CustomPlugins">
+            <summary>
+            Gets or sets the custom plugins.
+            </summary>
+            <value>
+            The plugins.
+            </value>
+        </member>
+        <member name="P:Rebel.Cms.Web.PropertyEditors.RichTextBox.RichTextBoxPreValueModel.ShowLabel">
+            <summary>
+            Gets or sets a value indicating whether to show the label or not.
+            </summary>
+            <value>
+              <c>true</c> if should show label; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Rebel.Cms.Web.PropertyEditors.RichTextBox.RichTextBoxPreValueModel.ShowContextMenu">
+            <summary>
+            Gets or sets a value indicating whether to show the context menu or not.
+            </summary>
+            <value>
+              <c>true</c> if should show the context menu; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Rebel.Cms.Web.PropertyEditors.RichTextBox.RichTextBoxPreValueModel.Size">
+            <summary>
+            Gets or sets the size of the editor (width/height)
+            </summary>
+            <value>
+            The size.
+            </value>
+        </member>
+        <member name="P:Rebel.Cms.Web.PropertyEditors.RichTextBox.RichTextBoxPreValueModel.Features">
+            <summary>
+            Gets or sets the list of features supported by the rich text box.
+            </summary>
+            <value>
+            The features.
+            </value>
+        </member>
+        <member name="P:Rebel.Cms.Web.PropertyEditors.RichTextBox.RichTextBoxPreValueModel.Stylesheets">
+            <summary>
+            Gets or sets the stylesheets supported by the rich text box.
+            </summary>
+            <value>
+            The stylesheets.
+            </value>
+        </member>
+        <member name="P:Rebel.Cms.Web.PropertyEditors.RichTextBox.RichTextBoxPreValueModel.IsRequired">
+            <summary>
+            Gets or sets a value indicating whether this instance is required.
+            </summary>
+            <value>
+            	<c>true</c> if this instance is required; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="T:Rebel.Cms.Web.PropertyEditors.RichTextBox.RichTextBoxPreValueModelBinder">
+            <summary>
+            Model binder for the richt text box prevaluemodel which helps the binding of the selected
+            features and stylesheets check box lists
+            </summary>
+        </member>
+        <member name="P:Rebel.Cms.Web.PropertyEditors.Slider.SliderPreValueModel.EnableRange">
+            <summary>
+            Gets or sets a value indicating whether [enable range].
+            </summary>
+            <value><c>true</c> if [enable range]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Rebel.Cms.Web.PropertyEditors.Slider.SliderPreValueModel.RangeValue">
+            <summary>
+            Gets or sets the range value.
+            </summary>
+            <value>The range value.</value>
+        </member>
+        <member name="P:Rebel.Cms.Web.PropertyEditors.Slider.SliderPreValueModel.Value">
+            <summary>
+            Gets or sets the value.
+            </summary>
+            <value>The value.</value>
+        </member>
+        <member name="P:Rebel.Cms.Web.PropertyEditors.Slider.SliderPreValueModel.Value2">
+            <summary>
+            Gets or sets the second value.
+            </summary>
+            <value>The second value.</value>
+        </member>
+        <member name="P:Rebel.Cms.Web.PropertyEditors.Slider.SliderPreValueModel.MinValue">
+            <summary>
+            Gets or sets the min value.
+            </summary>
+            <value>The min value.</value>
+        </member>
+        <member name="P:Rebel.Cms.Web.PropertyEditors.Slider.SliderPreValueModel.MaxValue">
+            <summary>
+            Gets or sets the max value.
+            </summary>
+            <value>The max value.</value>
+        </member>
+        <member name="P:Rebel.Cms.Web.PropertyEditors.Slider.SliderPreValueModel.EnableStep">
+            <summary>
+            Gets or sets a value indicating whether [enable step].
+            </summary>
+            <value><c>true</c> if [enable step]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Rebel.Cms.Web.PropertyEditors.Slider.SliderPreValueModel.StepValue">
+            <summary>
+            Gets or sets the step.
+            </summary>
+            <value>The step.</value>
+        </member>
+        <member name="P:Rebel.Cms.Web.PropertyEditors.Slider.SliderPreValueModel.Orientation">
+            <summary>
+            Gets or sets the orientation.
+            </summary>
+            <value>The orientation.</value>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.TextBox.TextBoxEditorModel.Validate(System.ComponentModel.DataAnnotations.ValidationContext)">
+            <summary>
+            Performs the dynamic validation against the pre-value model
+            </summary>
+            <param name="validationContext"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Rebel.Cms.Web.PropertyEditors.TextBox.TextBoxPreValueModel">
+            <summary>
+            The model representing the pre-value editor for the TextBox property editor
+            </summary>    
+        </member>
+        <member name="P:Rebel.Cms.Web.PropertyEditors.TextBox.TextBoxPreValueModel.Mode">
+            <summary>
+            The text box mode
+            </summary>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.Upload.UploadEditor.#ctor(Rebel.Cms.Web.Context.IBackOfficeRequestContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Rebel.Cms.Web.PropertyEditors.Upload.UploadEditor"/> class.
+            </summary>
+            <param name="backOfficeRequestContext">The back office request context.</param>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.Upload.UploadEditor.CreateEditorModel(Rebel.Cms.Web.PropertyEditors.Upload.UploadPreValueModel)">
+            <summary>
+            Creates the editor model
+            </summary>
+            <param name="preValues"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.Upload.UploadEditor.CreatePreValueEditorModel">
+            <summary>
+            Creates the pre value model
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.Upload.UploadEditorModel.Validate(System.ComponentModel.DataAnnotations.ValidationContext)">
+            <summary>
+            Executes custom server side validation for the model
+            </summary>
+            <param name="validationContext"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Rebel.Cms.Web.PropertyEditors.Upload.UploadEditorModel.File">
+            <summary>
+            The media value
+            </summary>
+        </member>
+        <member name="P:Rebel.Cms.Web.PropertyEditors.Upload.UploadEditorModel.MediaId">
+            <summary>
+            A Guid that is used to track which folder to store the media in, when new media is created this model generates this Id which gets stored in the repository.
+            </summary>
+        </member>
+        <member name="P:Rebel.Cms.Web.PropertyEditors.Upload.UploadEditorModel.NewFile">
+            <summary>
+            Gets or sets the new file.
+            </summary>
+        </member>
+        <member name="P:Rebel.Cms.Web.PropertyEditors.Upload.UploadEditorModel.RemoveFile">
+            <summary>
+            Gets or sets a value indicating whether to remove file.
+            </summary>
+        </member>
+        <member name="P:Rebel.Cms.Web.PropertyEditors.Upload.UploadEditorModel.Value">
+            <summary>
+            The media value
+            </summary>
+        </member>
+        <member name="P:Rebel.Cms.Web.PropertyEditors.UrlPicker.UrlPickerEditorModel.ThangDoer">
+            <summary>
+            Whether the user can do their thang
+            </summary>
+        </member>
+        <member name="T:Rebel.Cms.Web.PropertyEditors.UrlPicker.UrlPickerMode">
+            <summary>
+            The modes this datatype can implement - they refer to how the local/external content is referred.
+            </summary>
+        </member>
+        <member name="F:Rebel.Cms.Web.PropertyEditors.UrlPicker.UrlPickerMode.URL">
+            <summary>
+            URL string
+            </summary>
+        </member>
+        <member name="F:Rebel.Cms.Web.PropertyEditors.UrlPicker.UrlPickerMode.Content">
+            <summary>
+            Content node
+            </summary>
+        </member>
+        <member name="F:Rebel.Cms.Web.PropertyEditors.UrlPicker.UrlPickerMode.Media">
+            <summary>
+            Media node
+            </summary>
+        </member>
+        <member name="F:Rebel.Cms.Web.PropertyEditors.UrlPicker.UrlPickerMode.Upload">
+            <summary>
+            Upload a file
+            </summary>
+        </member>
+        <member name="T:Rebel.Cms.Web.PropertyEditors.UrlPicker.UrlPickerPreValueModel">
+            <summary>
+            Prevalues for the URL Picker - these are settings which won't change for the lifetime of the
+            URL picker as a JavaScript object, and are required for it's working
+            </summary>
+        </member>
+        <member name="P:Rebel.Cms.Web.PropertyEditors.UrlPicker.UrlPickerPreValueModel.AllowedModes">
+            <summary>
+            Which modes have been allowed for this picker
+            </summary>
+        </member>
+        <member name="P:Rebel.Cms.Web.PropertyEditors.UrlPicker.UrlPickerPreValueModel.DefaultMode">
+            <summary>
+            The mode which is initally selected
+            </summary>
+        </member>
+        <member name="P:Rebel.Cms.Web.PropertyEditors.UrlPicker.UrlPickerPreValueModel.DataFormat">
+            <summary>
+            Store as comma seperated or XML
+            </summary>
+        </member>
+        <member name="P:Rebel.Cms.Web.PropertyEditors.UrlPicker.UrlPickerPreValueModel.EnableTitle">
+            <summary>
+            Whether the user can specify a title
+            </summary>
+        </member>
+        <member name="P:Rebel.Cms.Web.PropertyEditors.UrlPicker.UrlPickerPreValueModel.EnableNewWindow">
+            <summary>
+            Whether the user can specify the link to open in a new window
+            </summary>
+        </member>
+        <member name="P:Rebel.Cms.Web.PropertyEditors.UrlPicker.UrlPickerPreValueModel.UniquePropertyId">
+            <summary>
+            An integer unique to this instance of the editor
+            
+            Used (at the time of writing) to save files in the correct subfolder under the media folder
+            </summary>
+        </member>
+        <member name="P:Rebel.Cms.Web.PropertyEditors.UrlPicker.UrlPickerPreValueModel.Standalone">
+            <summary>
+            Whether the editor is being used entirely client-side
+            (affects how the data editor is rendered).  Leave this as 'true' if you
+            are using the data editor as a child of another data editor, or accessing
+            it solely through the javascript API.
+            </summary>
+        </member>
+        <member name="P:Rebel.Cms.Web.PropertyEditors.UrlPicker.UrlPickerPreValueModel.ContentNodeUrlMethod">
+            <summary>
+            URL for an Ajax method which obtains a Content node's URL
+            </summary>
+        </member>
+        <member name="P:Rebel.Cms.Web.PropertyEditors.UrlPicker.UrlPickerPreValueModel.MediaNodeUrlMethod">
+            <summary>
+            URL for an Ajax method which obtains a Media node's URL
+            </summary>
+        </member>
+        <member name="P:Rebel.Cms.Web.PropertyEditors.UrlPicker.UrlPickerPreValueModel.AjaxUploadHandlerUrl">
+            <summary>
+            URL to the ajax upload handler
+            </summary>
+        </member>
+        <member name="P:Rebel.Cms.Web.PropertyEditors.UrlPicker.UrlPickerPreValueModel.AjaxUploadHandlerGuid">
+            <summary>
+            GUID of the AjaxUploadHander
+            </summary>
+        </member>
+        <member name="T:Rebel.Cms.Web.PropertyEditors.UrlPicker.UrlPickerDataFormat">
+            <summary>
+            Determines in which serialized format the the data is saved to the database
+            </summary>
+        </member>
+        <member name="F:Rebel.Cms.Web.PropertyEditors.UrlPicker.UrlPickerDataFormat.XML">
+            <summary>
+            Store as XML
+            </summary>
+        </member>
+        <member name="F:Rebel.Cms.Web.PropertyEditors.UrlPicker.UrlPickerDataFormat.CSV">
+            <summary>
+            Store as comma delimited (CSV, single line)
+            </summary>
+        </member>
+        <member name="F:Rebel.Cms.Web.PropertyEditors.UrlPicker.UrlPickerDataFormat.JSON">
+            <summary>
+            Store as a JSON object, which can be deserialized by .NET or JavaScript
+            </summary>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.TreeNodePicker.TreeNodePickerPreValueModel.GetAvailableTrees">
+            <summary>
+            Returns the trees available within rebel
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.TreeNodePicker.TreeNodePickerPreValueModel.SetModelValues(System.String)">
+            <summary>
+            Get the list of Ids and create the select list
+            </summary>
+            <param name="serializedVal"></param>
+        </member>
+        <member name="M:Rebel.Cms.Web.PropertyEditors.TreeNodePicker.TreeNodePickerPreValueModel.GetSerializedValue">
+            <summary>
+            Return a serialized string of values for the pre value editor model
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Rebel.Cms.Web.PropertyEditors.TreeNodePicker.TreeNodePickerPreValueModel.TreeId">
+            <summary>
+            Gets or sets the tree id.
+            </summary>
+            <value>
+            The tree id.
+            </value>
+        </member>
+        <member name="P:Rebel.Cms.Web.PropertyEditors.TreeNodePicker.TreeNodePickerPreValueModel.AvailableTrees">
+            <summary>
+            Gets or sets the available trees.
+            </summary>
+            <value>
+            The available trees.
+            </value>
+        </member>
+        <member name="P:Rebel.Cms.Web.PropertyEditors.TreeNodePicker.TreeNodePickerPreValueModel.IsRequired">
+            <summary>
+            Gets or sets a value indicating whether this instance is required.
+            </summary>
+            <value>
+            	<c>true</c> if this instance is required; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="T:Rebel.Cms.Web.PropertyEditors.TreeNodePicker.TreeDefinition">
+            <summary>
+            Defines a tree, both the name and the Id
+            </summary>
+        </member>
+        <member name="T:Rebel.Cms.Web.PropertyEditors.UrlPicker.UrlPickerPreValueModelBinder">
+            <summary>
+            Required because of the "Allowed Modes" list box - if none are selected,
+            nothing is bound
+            </summary>
+        </member>
+    </members>
+</doc>

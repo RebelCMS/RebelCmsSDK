@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Rebel.Cms.Web.Tasks</name>
+    </assembly>
+    <members>
+        <member name="T:Rebel.Cms.Web.Tasks.ConfigurationTaskBuilder">
+            <summary>
+            Retrieves all tasks registered in configuration (mostly for packages) using the deep configuration manager
+            </summary>
+        </member>
+        <member name="M:Rebel.Cms.Web.Tasks.ConfigurationTaskBuilder.#ctor(Rebel.Cms.Web.Context.IRebelApplicationContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Rebel.Cms.Web.Tasks.ConfigurationTaskBuilder"/> class.
+            </summary>
+            <param name="applicationContext">The application context.</param>
+        </member>
+        <member name="M:Rebel.Cms.Web.Tasks.ConfigurationTaskBuilder.Execute(Rebel.Framework.Tasks.TaskExecutionContext)">
+            <summary>
+            This gets all tasks found in configuration blocks and dynamically creates real task definitions from them 
+            and registers them with the task manager with the trigger name of the package they were found in 
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="F:Rebel.Cms.Web.Tasks.CopyFileTask._httpContextResolver">
+            <summary>
+            delegate to get the current http context
+            </summary>
+        </member>
+        <member name="M:Rebel.Cms.Web.Tasks.CopyFileTask.#ctor(Rebel.Cms.Web.Context.ConfigurationTaskContext)">
+            <summary>
+            Constructor, uses HttpContext.Current as the http context
+            </summary>
+            <param name="configurationTaskContext"></param>
+        </member>
+        <member name="M:Rebel.Cms.Web.Tasks.CopyFileTask.#ctor(Rebel.Cms.Web.Context.ConfigurationTaskContext,System.Func{System.Web.HttpContextBase})">
+            <summary>
+            Constructor
+            </summary>
+            <param name="configurationTaskContext"></param>
+            <param name="httpContextResolver"></param>
+        </member>
+        <member name="T:Rebel.Cms.Web.Tasks.DisplayUITask">
+            <summary>
+            This task is not invoked directly, instead its normally used as a proxy task
+            for configuration tasks.
+            </summary>
+        </member>
+        <member name="T:Rebel.Cms.Web.Tasks.EnsureCoreDataTask">
+            <summary>
+              Once Hive is setup/installed, we need to get the core data into the system
+            </summary>
+        </member>
+    </members>
+</doc>

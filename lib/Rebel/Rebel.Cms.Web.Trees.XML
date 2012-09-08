@@ -1,0 +1,292 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Rebel.Cms.Web.Trees</name>
+    </assembly>
+    <members>
+        <member name="M:Rebel.Cms.Web.Trees.AbstractUserGroupTree.CreateRootNode(System.Web.Mvc.FormCollection)">
+            <summary>
+            Customize root node
+            </summary>
+            <param name="queryStrings"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Rebel.Cms.Web.Trees.RecycleBinTreeController">
+            <summary>
+            A tree that supports a recycle bin
+            </summary>
+        </member>
+        <member name="M:Rebel.Cms.Web.Trees.RecycleBinTreeController.AddMenuItemsToNode(Rebel.Cms.Web.Model.BackOffice.Trees.TreeNode,System.Web.Mvc.FormCollection)">
+            <summary>
+            Adds menu items to each node that is not under the recycle bin
+            </summary>
+            <param name="n"></param>
+            <param name="queryStrings"></param>
+        </member>
+        <member name="M:Rebel.Cms.Web.Trees.RecycleBinTreeController.AddMenuItemsToNodeInRecycleBin(Rebel.Cms.Web.Model.BackOffice.Trees.TreeNode,System.Web.Mvc.FormCollection)">
+            <summary>
+            Adds menu itmes to each node that is in the recycle bin
+            </summary>
+            <param name="n"></param>
+            <param name="queryStrings"></param>
+        </member>
+        <member name="M:Rebel.Cms.Web.Trees.RecycleBinTreeController.GetChildTreeNodes(Rebel.Framework.HiveId,System.Web.Mvc.FormCollection)">
+            <summary>
+            Gets the child tree nodes for any node other than the recycle bin children
+            </summary>
+            <param name="parentId"></param>
+            <param name="queryStrings"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.Trees.RecycleBinTreeController.AddRecycleBin(Rebel.Framework.HiveId,System.Web.Mvc.FormCollection)">
+            <summary>
+            Adds the recycle bin if it is the first node in the tree
+            </summary>
+            <param name="parentId"></param>
+            <param name="queryStrings"></param>
+        </member>
+        <member name="M:Rebel.Cms.Web.Trees.ContentTreeController.CreateRootNode(System.Web.Mvc.FormCollection)">
+            <summary>
+            Customize the root node
+            </summary>
+            <param name="queryStrings"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.Trees.ContentTreeController.GetHiveProvider(Rebel.Framework.HiveId,System.Web.Mvc.FormCollection)">
+            <summary>
+            Returns the Hive provider to be used to query for child nodes
+            </summary>
+            <param name="parentId"></param>
+            <param name="queryStrings"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.Trees.ContentTreeController.GetChildTreeNodes(Rebel.Framework.HiveId,System.Web.Mvc.FormCollection)">
+            <summary>
+            Get the child tree nodes for the id specified
+            </summary>
+            <param name="parentId"></param>
+            <param name="queryStrings"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.Trees.ContentTreeController.GetChildContentIds(Rebel.Framework.HiveId,Rebel.Hive.ProviderGrouping.IReadonlyGroupUnit{Rebel.Hive.RepositoryTypes.IContentStore})">
+            <summary>
+            Gets the child content ids for this tree given a <paramref name="parentId"/>.
+            </summary>
+            <param name="parentId">The parent id.</param>
+            <param name="uow">The uow.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.Trees.ContentTreeController.AddMenuItemsToNode(Rebel.Cms.Web.Model.BackOffice.Trees.TreeNode,System.Web.Mvc.FormCollection)">
+            <summary>
+            Adds menu items to each node
+            </summary>
+            <param name="n"></param>
+            <param name="queryStrings"></param>
+        </member>
+        <member name="M:Rebel.Cms.Web.Trees.ContentTreeController.AddMenuItemsToRootNode(Rebel.Cms.Web.Model.BackOffice.Trees.TreeNode,System.Web.Mvc.FormCollection)">
+            <summary>
+            Adds menu items to root node
+            </summary>
+            <param name="n"></param>
+            <param name="queryStrings"></param>
+        </member>
+        <member name="M:Rebel.Cms.Web.Trees.DocumentTypeTreeController.CreateRootNode(System.Web.Mvc.FormCollection)">
+            <summary>
+            Customize root node
+            </summary>
+            <param name="queryStrings"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Rebel.Cms.Web.Trees.DocumentTypeTreeController.RootNodeId">
+            <summary>
+            Returns the SystemRoot node as the start node for this tree
+            </summary>
+        </member>
+        <member name="P:Rebel.Cms.Web.Trees.DocumentTypeTreeController.EditorControllerId">
+            <summary>
+            Defines the document type editor
+            </summary>
+        </member>
+        <member name="T:Rebel.Cms.Web.Trees.MacroPartialsTreeController">
+            <summary>
+            Tree controller to render out the javascript files
+            </summary>
+        </member>
+        <member name="T:Rebel.Cms.Web.Trees.AbstractFileSystemTreeController">
+            <summary>
+            Abstract tree used to render file/folder structures
+            </summary>
+        </member>
+        <member name="M:Rebel.Cms.Web.Trees.AbstractFileSystemTreeController.CustomizeFileNode(Rebel.Cms.Web.Model.BackOffice.Trees.TreeNode,System.Web.Mvc.FormCollection)">
+            <summary>
+            Adds the menu items to the node and sets the icon
+            </summary>
+            <param name="n"></param>
+            <param name="queryStrings"></param>
+        </member>
+        <member name="M:Rebel.Cms.Web.Trees.AbstractFileSystemTreeController.CustomizeFolderNode(Rebel.Cms.Web.Model.BackOffice.Trees.TreeNode,System.Web.Mvc.FormCollection)">
+            <summary>
+            Adds the menu items to the node and sets the icon
+            </summary>
+            <param name="n"></param>
+            <param name="queryStrings"></param>
+        </member>
+        <member name="M:Rebel.Cms.Web.Trees.AbstractFileSystemTreeController.CreateRootNode(System.Web.Mvc.FormCollection)">
+            <summary>
+            Customize root node
+            </summary>
+            <param name="queryStrings"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Rebel.Cms.Web.Trees.DataTypeTreeController">
+            <summary>
+            Tree controller to render out the data types
+            </summary>
+        </member>
+        <member name="M:Rebel.Cms.Web.Trees.DataTypeTreeController.CreateRootNode(System.Web.Mvc.FormCollection)">
+            <summary>
+            Customize the created root node
+            </summary>
+            <param name="queryStrings"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Rebel.Cms.Web.Trees.DataTypeTreeController.RootNodeId">
+            <summary>
+            Returns a unique tree root node id
+            </summary>
+            <remarks>
+            We are assigning a static unique id to this tree in order to facilitate tree node syncing
+            </remarks>
+        </member>
+        <member name="P:Rebel.Cms.Web.Trees.DataTypeTreeController.EditorControllerId">
+            <summary>
+            Defines the data type editor
+            </summary>
+        </member>
+        <member name="M:Rebel.Cms.Web.Trees.LanguageTreeController.CreateRootNode(System.Web.Mvc.FormCollection)">
+            <summary>
+            Customize root node
+            </summary>
+            <param name="queryStrings"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rebel.Cms.Web.Trees.LanguageTreeController.AddMenuItemsToRootNode(Rebel.Cms.Web.Model.BackOffice.Trees.TreeNode,System.Web.Mvc.FormCollection)">
+            <summary>
+            Adds menu items to root node
+            </summary>
+            <param name="n"></param>
+            <param name="queryStrings"></param>
+        </member>
+        <member name="P:Rebel.Cms.Web.Trees.LanguageTreeController.RootNodeId">
+            <summary>
+            Returns a unique tree root node id
+            </summary>
+            <remarks>
+            We are assigning a static unique id to this tree in order to facilitate tree node syncing
+            </remarks>
+        </member>
+        <member name="P:Rebel.Cms.Web.Trees.MemberGroupTreeController.ProviderGroupRoot">
+            <summary>
+            Gets the provider group root.
+            </summary>
+        </member>
+        <member name="P:Rebel.Cms.Web.Trees.MemberGroupTreeController.VirtualRoot">
+            <summary>
+            Gets the provider group root.
+            </summary>
+        </member>
+        <member name="P:Rebel.Cms.Web.Trees.MemberGroupTreeController.EditorControllerId">
+            <summary>
+            Defines the member group editor
+            </summary>
+        </member>
+        <member name="M:Rebel.Cms.Web.Trees.MemberTreeController.CreateRootNode(System.Web.Mvc.FormCollection)">
+            <summary>
+            Customize root node
+            </summary>
+            <param name="queryStrings"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Rebel.Cms.Web.Trees.MemberTreeController.RootNodeId">
+            <summary>
+            Returns a hard coded root node id so that tree syncing works properly
+            </summary>
+        </member>
+        <member name="T:Rebel.Cms.Web.Trees.MenuItems.RequiresDataKeyMenuItem">
+            <summary>
+            A menu item that validates that a required key exists in the additional data
+            </summary>
+        </member>
+        <member name="P:Rebel.Cms.Web.Trees.PackagingTreeController.RootNodeId">
+            <summary>
+            Returns a unique tree root node id
+            </summary>
+            <remarks>
+            We are assigning a static unique id to this tree in order to facilitate tree node syncing
+            </remarks>
+        </member>
+        <member name="P:Rebel.Cms.Web.Trees.PackagingTreeController.PackageTreeNodes">
+            <summary>
+            Represents the list of nodes for the tree. 
+            </summary>
+            <remarks>
+            Each item in the Tuple represents: the node ID, the name, the controller Action name
+            </remarks>
+        </member>
+        <member name="T:Rebel.Cms.Web.Trees.PartialsTreeController">
+            <summary>
+            Tree controller to render out the javascript files
+            </summary>
+        </member>
+        <member name="T:Rebel.Cms.Web.Trees.ScriptTreeController">
+            <summary>
+            Tree controller to render out the javascript files
+            </summary>
+        </member>
+        <member name="M:Rebel.Cms.Web.Trees.StylesheetTreeController.GetTreeData(Rebel.Framework.HiveId,System.Web.Mvc.FormCollection)">
+            <summary>
+            Need to check if the node being requested is a file, if so, return the rules for it, otherwise process as per normal
+            </summary>
+            <param name="parentId"></param>
+            <param name="queryStrings"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Rebel.Cms.Web.Trees.UserTreeController">
+            <summary>
+            Tree controller to render out the data types
+            </summary>
+        </member>
+        <member name="M:Rebel.Cms.Web.Trees.UserTreeController.CreateRootNode(System.Web.Mvc.FormCollection)">
+            <summary>
+            Customize root node
+            </summary>
+            <param name="queryStrings"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Rebel.Cms.Web.Trees.UserTreeController.EditorControllerId">
+            <summary>
+            Defines the data type editor
+            </summary>
+        </member>
+        <member name="T:Rebel.Cms.Web.Trees.UserGroupTreeController">
+            <summary>
+            Tree controller to render out the data types
+            </summary>
+        </member>
+        <member name="P:Rebel.Cms.Web.Trees.UserGroupTreeController.ProviderGroupRoot">
+            <summary>
+            Gets the provider group root.
+            </summary>
+        </member>
+        <member name="P:Rebel.Cms.Web.Trees.UserGroupTreeController.VirtualRoot">
+            <summary>
+            Gets the provider group root.
+            </summary>
+        </member>
+        <member name="P:Rebel.Cms.Web.Trees.UserGroupTreeController.EditorControllerId">
+            <summary>
+            Defines the member group editor
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,30 @@
+default
+	siteid						auto
+
+local
+	deployment.root				d:\sites
+	website.name				rebelcms.local
+	website.domain	 			rebelcms.local
+	website.source.folder		web
+	web.servers					localhost
+
+test-example
+	deployment.root				d:\sites
+	website.name				test.rebelcms.com
+	website.domain	 			test.rebelcms.com
+	website.source.folder		web
+	web.servers					localhost
+	
+uat-example
+	deployment.root				d:\sites
+	website.name				uat.rebelcms.com
+	website.domain	 			uat.rebelcms.com
+	website.source.folder		web
+	web.servers					remote-server1
+	
+live-example
+	deployment.root				d:\sites
+	website.name				beta.rebelcms.com
+	website.domain	 			beta.rebelcms.com
+	website.source.folder		web
+	web.servers					remote-server1
