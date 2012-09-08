@@ -16,7 +16,7 @@ Getting started
 =============
 *	Fork this repository
 *	Start adding Specs and Autoacceptance tests and use BDD/TDD
-* 	Build templates, document-types, data-types etc in code.
+* 	Build templates, document-types, data-types etc in code. [in progress]
 
 How to Deploy
 =============
@@ -27,6 +27,7 @@ How to Deploy
 *	Run "deploy [environment]" from the _package folder. In this case "deploy local". The environment correlates to the the entry in the settings.txt file.
 *	Login with "admin/admin"
 *	Change admin password
+*	Create more environments and servers to deploy anywhere on your network. See more at [PowerUp](https://github.com/AffinityID/PowerUp)
 
 How to run the tests
 ==============
