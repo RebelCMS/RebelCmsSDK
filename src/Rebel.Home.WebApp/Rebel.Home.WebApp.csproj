@@ -33,34 +33,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.4.1.10331.0\lib\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Data.Entity" />
-    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
-    <Reference Include="System.Web.WebPages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
-    <Reference Include="System.Web.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Web.DynamicData" />
-    <Reference Include="System.Web.Entity" />
-    <Reference Include="System.Web.ApplicationServices" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Web" />
-    <Reference Include="System.Web.Extensions" />
-    <Reference Include="System.Web.Abstractions" />
-    <Reference Include="System.Web.Routing" />
-    <Reference Include="System.Xml" />
-    <Reference Include="System.Configuration" />
-    <Reference Include="System.Web.Services" />
-    <Reference Include="System.EnterpriseServices" />
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -987,6 +959,215 @@
     <Content Include="Views\Partials\LoginPartial.cshtml" />
     <Content Include="Views\Partials\RegisterPartial.cshtml" />
     <Content Include="Views\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime">
+      <HintPath>..\..\lib\Rebel\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Artem.Web.Security">
+      <HintPath>..\..\lib\Rebel\Artem.Web.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac, Version=2.5.2.830, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Rebel\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Configuration">
+      <HintPath>..\..\lib\Rebel\Autofac.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.Mvc, Version=2.5.2.830, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Rebel\Autofac.Integration.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core, Version=2.5.1.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Rebel\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="ClientDependency.Core, Version=1.5.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Rebel\ClientDependency.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="ClientDependency.Core.Mvc, Version=1.5.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Rebel\ClientDependency.Core.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="DataAnnotationsExtensions, Version=1.0.2.0, Culture=neutral, PublicKeyToken=358a5681c50fd84c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Rebel\DataAnnotationsExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="DataAnnotationsExtensions.ClientValidation, Version=1.0.2.0, Culture=neutral, PublicKeyToken=358a5681c50fd84c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Rebel\DataAnnotationsExtensions.ClientValidation.dll</HintPath>
+    </Reference>
+    <Reference Include="Dynamic, Version=1.0.0.0, Culture=neutral, PublicKeyToken=68293a411f0cabcc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Rebel\Dynamic.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentNHibernate, Version=2.0.0.0, Culture=neutral, PublicKeyToken=8aa435e3cb308880, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Rebel\FluentNHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="HibernatingRhinos.Profiler.Appender.v4.0, Version=1.0.0.0, Culture=neutral, PublicKeyToken=0774796e73ebf640, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Rebel\HibernatingRhinos.Profiler.Appender.v4.0.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlDiff, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Rebel\HtmlDiff.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>..\..\lib\Rebel\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections, Version=1.0.1.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Rebel\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Rebel\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Lucene.Net, Version=2.9.4.1, Culture=neutral, PublicKeyToken=85089178b9ac3181, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Rebel\Lucene.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Rebel\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Mvc, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Rebel\Microsoft.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="MvcContrib.TestHelper">
+      <HintPath>..\..\lib\Rebel\MvcContrib.TestHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Rebel\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate, Version=3.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Rebel\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.ByteCode.Castle, Version=3.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Rebel\NHibernate.ByteCode.Castle.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.Caches.SysCache2, Version=3.1.0.4000, Culture=neutral, PublicKeyToken=6876f2ea66c9f443, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Rebel\NHibernate.Caches.SysCache2.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.XmlSerializers, Version=3.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Rebel\NHibernate.XmlSerializers.dll</HintPath>
+    </Reference>
+    <Reference Include="NSubstitute">
+      <HintPath>..\..\lib\Rebel\NSubstitute.dll</HintPath>
+    </Reference>
+    <Reference Include="NuGet.Core, Version=1.0.11220.104, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Rebel\NuGet.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>..\..\lib\Rebel\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Rebel.Cms.Packages.DevDataset">
+      <HintPath>..\..\lib\Rebel\Rebel.Cms.Packages.DevDataset.dll</HintPath>
+    </Reference>
+    <Reference Include="Rebel.Cms.Packages.SnapshotDashboard">
+      <HintPath>..\..\lib\Rebel\Rebel.Cms.Packages.SnapshotDashboard.dll</HintPath>
+    </Reference>
+    <Reference Include="Rebel.Cms.Packages.SystemInfo">
+      <HintPath>..\..\lib\Rebel\Rebel.Cms.Packages.SystemInfo.dll</HintPath>
+    </Reference>
+    <Reference Include="Rebel.Cms.Web, Version=1.0.16.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Rebel\Rebel.Cms.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Rebel.Cms.Web.Editors">
+      <HintPath>..\..\lib\Rebel\Rebel.Cms.Web.Editors.dll</HintPath>
+    </Reference>
+    <Reference Include="Rebel.Cms.Web.EmbeddedViewEngine, Version=1.0.16.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Rebel\Rebel.Cms.Web.EmbeddedViewEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="Rebel.Cms.Web.ParameterEditors">
+      <HintPath>..\..\lib\Rebel\Rebel.Cms.Web.ParameterEditors.dll</HintPath>
+    </Reference>
+    <Reference Include="Rebel.Cms.Web.PropertyEditors">
+      <HintPath>..\..\lib\Rebel\Rebel.Cms.Web.PropertyEditors.dll</HintPath>
+    </Reference>
+    <Reference Include="Rebel.Cms.Web.Tasks">
+      <HintPath>..\..\lib\Rebel\Rebel.Cms.Web.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Rebel.Cms.Web.Trees">
+      <HintPath>..\..\lib\Rebel\Rebel.Cms.Web.Trees.dll</HintPath>
+    </Reference>
+    <Reference Include="Rebel.Cms.Web.UI, Version=1.0.16.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Rebel\Rebel.Cms.Web.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Rebel.Framework, Version=1.0.16.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Rebel\Rebel.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Rebel.Framework.DependencyManagement.Autofac, Version=1.0.16.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Rebel\Rebel.Framework.DependencyManagement.Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Rebel.Framework.Persistence, Version=1.0.16.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Rebel\Rebel.Framework.Persistence.dll</HintPath>
+    </Reference>
+    <Reference Include="Rebel.Framework.Persistence.NHibernate, Version=1.0.16.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Rebel\Rebel.Framework.Persistence.NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="Rebel.Framework.Security, Version=1.0.16.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Rebel\Rebel.Framework.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Rebel.Framework.Testing">
+      <HintPath>..\..\lib\Rebel\Rebel.Framework.Testing.dll</HintPath>
+    </Reference>
+    <Reference Include="Rebel.Hive, Version=1.0.16.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Rebel\Rebel.Hive.dll</HintPath>
+    </Reference>
+    <Reference Include="Rebel.Hive.Providers.IO, Version=1.0.16.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Rebel\Rebel.Hive.Providers.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="Rebel.Lucene, Version=1.0.16.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Rebel\Rebel.Lucene.dll</HintPath>
+    </Reference>
+    <Reference Include="Rebel.MSBuild.Tasks">
+      <HintPath>..\..\lib\Rebel\Rebel.MSBuild.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Rebel.Tests.Cms">
+      <HintPath>..\..\lib\Rebel\Rebel.Tests.Cms.dll</HintPath>
+    </Reference>
+    <Reference Include="Rebel.Tests.CoreAndFramework">
+      <HintPath>..\..\lib\Rebel\Rebel.Tests.CoreAndFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Rebel.Tests.Extensions">
+      <HintPath>..\..\lib\Rebel\Rebel.Tests.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Remotion.Linq, Version=1.13.122.1, Culture=neutral, PublicKeyToken=fee00910d6e5f53b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Rebel\Remotion.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="Rhino.Mocks">
+      <HintPath>..\..\lib\Rebel\Rhino.Mocks.dll</HintPath>
+    </Reference>
+    <Reference Include="RouteDebugger, Version=2.0.0.6, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Rebel\RouteDebugger.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Text, Version=3.7.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Rebel\ServiceStack.Text.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
